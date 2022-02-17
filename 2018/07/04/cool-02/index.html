@@ -68,7 +68,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="https://blog-api-82lyjp492-jamin3125.vercel.app/">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -249,6 +249,28 @@
     </span>
 
   
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2018/07/04/cool-02/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2018/07/04/cool-02/" data-xid="/2018/07/04/cool-02/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2018/07/04/cool-02/" class="post-meta-item leancloud_visitors" data-flag-title="消费电子散热漫谈（其二）" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
 </div>
 
         </div>
@@ -349,6 +371,7 @@
 
 
 
+    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -385,6 +408,15 @@
 
 
 
-
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://blog-api-82lyjp492-jamin3125.vercel.app/","placeholder":"Please be nice","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2018/07/04/cool-02/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
 </body>
 </html>
