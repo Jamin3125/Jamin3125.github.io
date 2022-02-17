@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="致命的二重奏电和水的结合会带来致命的危险，当由电子元器件与集成电路板组成的产品和不停流动的水组合在一起，却能发挥出不一样的功效，这篇消费电子散热漫谈，我们先从水冷(Liquid Cooling)聊起。 首先要说明的是水冷散热，管子里流动的可不真的是从自来水管里接的水，一般而言都是用的蒸馏水，追求独特外观效果的会使用带有颜色的专用冷却液。 水冷散热是由一系列零部件所组成的一套完整的系统，其中必要的配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="消费电子散热漫谈（其二）">
+<meta property="og:url" content="http://example.com/2018/07/04/cool-02/index.html">
+<meta property="og:site_name" content="Boring Blog">
+<meta property="og:description" content="致命的二重奏电和水的结合会带来致命的危险，当由电子元器件与集成电路板组成的产品和不停流动的水组合在一起，却能发挥出不一样的功效，这篇消费电子散热漫谈，我们先从水冷(Liquid Cooling)聊起。 首先要说明的是水冷散热，管子里流动的可不真的是从自来水管里接的水，一般而言都是用的蒸馏水，追求独特外观效果的会使用带有颜色的专用冷却液。 水冷散热是由一系列零部件所组成的一套完整的系统，其中必要的配">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/BYjlmX6WeSkuxRP.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/1esjQxFtS5aknVl.gif">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/a9uHhfjIpyl2RSJ.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/kLowPc4A9QBHrui.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/yXhvEQ1GUILP2se.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/IvLWVbs237BZztS.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/cUWxbPerGHfVAkz.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/YNsIClXTPb6ca3v.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/8fLqRnzBuNVOibt.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/A7zVMtaOcJkUERe.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/jIuClXM6wJSEYkr.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/XSMFIYZEr5A3h2L.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/LBZxbpXmnl62Kk9.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/R5OSjN8fdtmHn2v.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/wAJXac9FBPGbKON.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/XmB7vyTwhcoPn2k.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/t1TmbBoGqR8ikEx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/17/wNkE53S1szHdBIf.jpg">
+<meta property="article:published_time" content="2018-07-04T13:59:51.000Z">
+<meta property="article:modified_time" content="2022-02-17T01:07:17.316Z">
+<meta property="article:author" content="奔街命">
+<meta property="article:tag" content="cooling">
+<meta property="article:tag" content="pc">
+<meta property="article:tag" content="hardware">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/02/17/BYjlmX6WeSkuxRP.jpg">
+
+
+<link rel="canonical" href="http://example.com/2018/07/04/cool-02/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2018/07/04/cool-02/","path":"2018/07/04/cool-02/","title":"消费电子散热漫谈（其二）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>消费电子散热漫谈（其二） | Boring Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Boring Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">database cannot give you any conclusion</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E5%91%BD%E7%9A%84%E4%BA%8C%E9%87%8D%E5%A5%8F"><span class="nav-number">1.</span> <span class="nav-text">致命的二重奏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%9A%84%E6%8C%91%E6%88%98"><span class="nav-number">2.</span> <span class="nav-text">移动的挑战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">奔街命</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/07/04/cool-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="奔街命">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Boring Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          消费电子散热漫谈（其二）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-04 21:59:51" itemprop="dateCreated datePublished" datetime="2018-07-04T21:59:51+08:00">2018-07-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-02-17 09:07:17" itemprop="dateModified" datetime="2022-02-17T09:07:17+08:00">2022-02-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hardware/" itemprop="url" rel="index"><span itemprop="name">hardware</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="致命的二重奏"><a href="#致命的二重奏" class="headerlink" title="致命的二重奏"></a>致命的二重奏</h2><p>电和水的结合会带来致命的危险，当由电子元器件与集成电路板组成的产品和不停流动的水组合在一起，却能发挥出不一样的功效，这篇消费电子散热漫谈，我们先从水冷(Liquid Cooling)聊起。</p>
+<p>首先要说明的是水冷散热，管子里流动的可不真的是从自来水管里接的水，一般而言都是用的蒸馏水，追求独特外观效果的会使用带有颜色的专用冷却液。</p>
+<p>水冷散热是由一系列零部件所组成的一套完整的系统，其中必要的配件有：冷头(Water Block)、水泵(Pump)、水箱(Reservoir)、冷排(Radiator)以及连接各部件所使用的管道等零件。对冷排有一定了解的读者可能会说，你这不瞎扯吗，风扇去哪儿了？这个问题我们等会再深入。</p>
+<span id="more"></span>
+<p>在这些零部件当中，最重要一个便是冷头，我先简单介绍一下利用液体来进行散热的原理。</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/BYjlmX6WeSkuxRP.jpg" alt="01.jpg"><br><img src="https://s2.loli.net/2022/02/17/1esjQxFtS5aknVl.gif" alt="02.gif">   </p>
+<p>看过上一期的朋友们可能还有印象（没有看过的话请点<a target="_blank" rel="noopener" href="https://slownas.tk/2018/06/25/cool-01/">这里</a>），电子元器件产生的热量需要一定的帮助才能高效地处理掉，人们一般使用散热片、散热风扇以及热管的组合来进行基于风冷的散热。主要利用的是流动的空气带走元器件产生的热量，在这一系统中，最重要的就是热量可以足够迅速的散布到散热鳍片中去，让风扇能够及时将热量吹走。</p>
+<p>而水冷散热的逻辑和风冷是大同小异的，区别在于元器件产生的热量并没有传递到风冷散热器那硕大复杂的散热鳍片中去，而是冷却液吸收了元器件产生的热量，然后冷却液自身的温度升高，由水泵推动冷却液，流到冷排降低液体温度，最后流回到冷头，完成一次循环。</p>
+<p>简而言之，水冷散热就是烧热水，然后将热水冷却之后继续烧，在烧热水的过程中，装水的这个壶（冷头）是最重要的，它的好坏决定了热水烧开的速度。冷头的作用不仅仅是一个让冷却液流经元器件上方的通道，冷头内部经过设计的特殊构造可以让冷却液更有效率的吸收元器件所散发的热量。在早期的设计中，冷头内部结构尽量让更多更大的水流通过，其内部的构成如下：</p>
+<p>​            <img src="https://s2.loli.net/2022/02/17/a9uHhfjIpyl2RSJ.jpg" alt="03.jpg"></p>
+<p>我们可以看到冷头内部有交错的管道，可以让冷却液在元器件的上方多停留一段时间，吸收更多的热量。</p>
+<p>很快人们就发现，高流速比大流量更有效，这是因为液体尽管比空气表现优秀，但管道内有一部分液体并没有充分受热，造成了一定的浪费，于是乎冷头的设计转为了追求更高的流速和更大的扩散面积。虽然单位时间内液体的量变少了，得益于改进后的冷头设计，液体在进入冷头后会被切割，扩大了接触面积，大大提升了散热效率。</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/kLowPc4A9QBHrui.jpg" alt="04.jpg"></p>
+<p>冷头的好坏决定了一个水冷散热系统的上限，一个好的冷头可以最大化的将热量转移到冷却液中，那受热后的冷却液又如何降温呢，这时候就要请出最大块头的冷排了。</p>
+<p>冷排的工作原理和散热片的一模一样，区别只是内部多了几个管道让受热过的冷却液流通。冷排表面有非常多紧凑的细小散热鳍片，这些散热鳍片的任务就是将冷排内部液体所携带的热量散发到空气中去，当你的冷排面积足够大的时候，仅靠冷排上的散热鳍片就能提供足够的散热能力，所以散热风扇并不是必要的。</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/yXhvEQ1GUILP2se.jpg" alt="05.jpg"></p>
+<p>经过这么多年的发展，冷排也和风扇一起实行了标准化，一般的冷排有120mm、240mm、280mm、360mm以及480mm的规格，这主要是方便加装市面上的各种散热风扇而定下来的尺寸。冷排不仅长度有区别，厚度也是不同的，在体积狭小的机箱内，一般用比较薄的冷排，配合薄风扇，能以比较小的体积得到相对风冷更高的散热效率。而追求静音的设计，会采用更厚的冷排，配合低转速的风压扇来获得静音与散热效果的兼顾。<br>    <img src="https://s2.loli.net/2022/02/17/IvLWVbs237BZztS.jpg" alt="06.jpg"><br>在水冷发展的早期，所有的零部件都是用软管连接，但这对于喜欢折腾，展示自我的极客们来说太low了，于是乎出现了亚克力管，玻璃管，最近还出现了纯金属的管道。这些酷炫的材质配合上各式各样带有颜色的冷却液，可以搭配出独一无二的视觉效果，充分彰显装机人的个性。</p>
+<p>水冷散热的效率比普通的风冷散热器要强一个档次，按我自己的情况来说，6热管的单塔侧吹式风冷散热器在应付Ryzen 1700超频至3.8Ghz的压力测试时，最高温度轻松飙过80℃，接近90℃。而在换用了240mm一体式水冷散热器后，温度最高不会超过68℃，而平时使用（吃鸡 + 推流1080p 60fps 8000kbps）的时候，温度甚至不会超过60℃。<br><img src="https://s2.loli.net/2022/02/17/cUWxbPerGHfVAkz.jpg" alt="07.jpg"><br><img src="https://s2.loli.net/2022/02/17/YNsIClXTPb6ca3v.jpg" alt="08.jpg"><br>虽然水冷的散热效率非常高，但并没有成为市场的主流有两个原因：</p>
+<ul>
+<li>是真的贵</li>
+<li>是真麻烦</li>
+</ul>
+<p>风冷散热器的价格，根据热管数量与定位，价格大致在79 - 499之间，其中市场的主流型号都是百元级别的。而分体式水冷，光CPU冷头的价格就可以购买高端的侧吹式风冷散热器了，更别提冷排、风扇、连接件等等，就算全部采用国产的配件，一整套水冷系统的价格轻松超过1000元，对于游戏玩家用户而已，1000元可以让显卡预算从甜品级直接变成次旗舰级。对于专业用户1000元可以加16GB内存或者是更好的CPU。</p>
+<p>不仅如此，在水冷系统的搭建过程中，如果是采用软管进行连接还好，要是硬管系统，那么还得自己进行管材的切割、打磨以及弯折，如果这个部分没有做好，极有可能出现漏水的情况，让系统零部件报废。冷却液虽然是在一个密闭的系统中，但每半年都要进行维护一次，检查冷头、连接件的内部情况，因为大量采用纯铜等易氧化的材料，在使用一段时间后需要进行清理。</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/8fLqRnzBuNVOibt.jpg" alt="09.jpg"></p>
+<p>各大厂家也不是不明白分体水冷散热的短板，于是乎在经过一番开发之后，区别于传统分体式水冷的产品形态出现了，那就是一体式水冷。</p>
+<p>一体式水冷，顾名思义，就是将原本单独安装再用管道连接的水冷系统整合到一起，不需要进行维护,一体式水冷头的设计更加具有通用性，不同的扣具可以让冷头支持更多的平台。最最重要的是，安装极其简单，不需要考虑管道连接的问题，只要将冷头扣在CPU上，冷排固定在机箱，然后将风扇装在冷排上就行，十分的方便。散热性能虽然比不上传统的分体式水冷系统，但是比起一般的风冷散热器还是强上一档（当然，猫头鹰那个王者D15还是可以藐视一切一体水冷的）。</p>
+<p>牺牲了一些扩展性与定制性，换来了便捷与更低的价格，一般品牌的240水冷大概在400 - 500元左右，高端的海盗船与NZXT的水冷在700 - 1200元左右，比起动辄1500 - 2000元甚至更高的分体水冷系统，还是可以接受的。</p>
+<p>一体式水冷最大的特点也是最有技术含量的地方在冷头，不同于分体式水冷的独立冷头，一体式水冷的冷头在完成原有作用的基础上，还整合了控制电路板以及水泵，在RGB风潮兴起后，一体式冷头还搭载了各式各样的灯效，比如我自己在用的NZXT Kraken X52，其冷头上搭载了镜面LED灯效，配合控制软件可以实现美轮美奂的RGB效果。</p>
+<p><img src="https://s2.loli.net/2022/02/17/A7zVMtaOcJkUERe.jpg" alt="10.jpg"></p>
+<h2 id="移动的挑战"><a href="#移动的挑战" class="headerlink" title="移动的挑战"></a>移动的挑战</h2><p>自从个人电脑(Personal Computer)出现以来，人们一直想将其移动化，尤其是Microsoft发布了Office系列软件之后，PC开始大规模进入企业。经常外出的商务人士对移动办公的需求也越来越强，于是乎早期的“笔记本”电脑出现了，在20世纪80年代，芯片的性能相对来说还比较弱，笔记本并不需要考虑散热的问题，加上那时候的砖头般的产品厚度给了内部足够大的散热空间，所以那个年代笔记本电脑所关心的主要还是能不能正常运行和尽量的轻一点。</p>
+<p>芯片性能沿着摩尔定律的不断攀升，加上用户对便携性的要求越来越高，笔记本电脑在进入21世纪后迎来了几个重要的改变。首先是Intel基本垄断了整个笔记本市场，开始将产品厚度控制到5cm以内。我们主要来谈一谈后面这个改变，随着芯片性能不断提升，CPU内部元器件集成的数量也越来越多，整体发热量急剧上升，在这样的大背景下，人们需要不同于桌面平台的散热方式来解决这个问题。</p>
+<p>首先我们需要明白一点，笔记本电脑的散热目标不仅仅是降低核心温度这么简单，由于笔记本电脑的产品特性，使用者必须长时间的接触笔记本产品自身，而不是像台式机那样，将主机丢在一边，只要机箱不爆炸就行了，因为台式机和用户交互的键盘、鼠标等输入输出设备与运算部件是分开的。但是笔记本电脑不同，它的键盘和触控板既是输入设备，辅助散热的一部分，用户在使用过程中会接触到这些部分，而这就意味着笔记本电脑的散热系统不仅要尽可能的降低内部芯片的温度，还要在这基础之上降低表面温度，这两个要求就决定了现在99%笔记本电脑的散热布局与散热模式。</p>
+<p>工程师们采用的设计思路十分简单，我们可以将笔记本内部的散热模组看成是一个非常迷你版的侧吹式散热器，其经典构造如下：</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/jIuClXM6wJSEYkr.jpg" alt="11.jpg"></p>
+<p>原理我就不赘述了，和侧吹式散热器的没有什么区别，我们重点来看看同样都是散热鳍片、散热风扇以及热管，到了笔记本电脑上，工程师们是如何进行排列组合的。</p>
+<p>不同于台式机散热器使用的圆柱形热管，笔记本电脑上的热管都是扁扁的，这很容易理解，为了将笔记本的厚度尽可能的减小，热管只能做成这样的形状，而且更加容易放置。这是Razer Blade Late 2012的散热系统示意图，我们可以看到热管的热端由一块均热板连接到芯片，冷端直接伸到了风扇的前面。如果我们仔细看的话，发现风扇的前面还有一部分，这就是散热鳍片了。互为垂直放置的风扇与散热鳍片，到笔记本电脑上之后就只能水平放置，通过调整散热风扇的布局，让风向水平吹出。<br><img src="https://s2.loli.net/2022/02/17/XSMFIYZEr5A3h2L.png" alt="12.png"><br>我们还可以看到这台笔记本电脑的出风口放在了左侧，这让整个键盘表面的高温部分整体偏向左上角。毕竟这是一台2012年的笔记本设计，对于游戏玩家来说（特别是射击游戏玩家和MOBA玩家），左上角的WASD与QWER这几个按键是高频按键，温度过高很容易影响玩家的发挥。所以近几年出现了非常多将出风口放在屏幕转轴下方，这样设计便将高温区域右左上角移动到了中间靠上的部分。</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/LBZxbpXmnl62Kk9.jpg" alt="13.jpg"></p>
+<p>为了追求更强的性能，市场上出现了一种回归笔记本产品早期设计的产品，它们有着巨大无比的身躯，野兽一般的性能，和一连串8或是9的价格。它们代表了“移动”产品的性能顶峰，也是散热暴力美学的极致，比如下面这台：</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/R5OSjN8fdtmHn2v.jpg" alt="14.jpg"></p>
+<p>上面这一款是Clevo P870系列模具，可以搭载两块旗舰级显卡与桌面级CPU，目前最高可以选装i7 8700k与GTX 1080 x 2，需要2个330W的笔记本电源才能驱动，价格也是是3开头后面一堆8和9了。</p>
+<p>我们一眼看上去，全是风扇和热管，得益于其壮实的身材，在这下面还隐藏了4个风扇用于吸入冷空气。比起台式电脑散热风扇600 - 2000rpm的风扇转速，这些产品中的散热风扇起步就是2000rpm，切换到狂暴模式之后，风扇转速直逼6000rpm，此时整体噪音接近60db，堪比飞机起飞。</p>
+<p>既然台式机能水冷，笔记本当然可以。</p>
+<p>大部分笔记本水冷都是玩家DIY的作品，但也有例外。玩家国度曾经推出了一款带水冷套件的产品，通过背后的连接口可以直接切换到水冷散热，十分的方便，合体之后外观霸气十足，甚至还可以进行超频处理，价格嘛，自然是3开头一堆8和9。不过可惜的是这个产品线只推出了一代就没有了后续，也许是市(qian)场(bao)还没准备好这么酷炫的产品吧。</p>
+<p>​            <img src="https://s2.loli.net/2022/02/17/wAJXac9FBPGbKON.jpg" alt="15.jpg"></p>
+<p><img src="https://s2.loli.net/2022/02/17/XmB7vyTwhcoPn2k.png" alt="16.png"></p>
+<p>随着制造工艺的不断提升和CPU性能的不断增强，不是所有的人都需要一台性能爆表，可以运行大型游戏、3D渲染抑或是剪切视频的强大笔记本。大部分用户的日常操作仅仅是浏览网页，进行文本编辑等普通的办公操作，相比于强劲的性能，他们更需要的是一台轻巧便捷、续航持久的产品。</p>
+<p>于是乎Intel顺应潮流，推出了超极本(Ultrabook)的概念，对什么样的笔记本可以称作超极本做了十分明确的定义，首先就得是用Intel的处理器（……），别的基本就是对厚度、重量以及续航时间的规定。到2016年左右，Intel推出了无需风扇的Core M系列，这一系列主打低功耗与低发热，可以在不借助任何主动散热系统的情况下稳定工作，市场也推出了无风扇的笔记本产品，实现了彻底静音。由于没有了风扇的限制，这些产品都非常轻薄，加之CPU功耗十分的低，续航时间都是8小时起。</p>
+<p>用户总是多种多样的，有这么一种用户，他们需要足够强劲的性能（比如能吃鸡，能剪视频啥的），又不想要傻大黑粗的砖头块，希望比较轻薄。在两三年前，这样的需求是不可能满足的，但由于nvidia和intel的共同发力，让这样的需求成为了可能。</p>
+<p>其中有些厂商为了应对这些产品所带来的严峻散热挑战开发了一些比较有意思的散热技术，其中的佼佼者就是华硕(Asus)的玩家国度GM501。</p>
+<p>​        <img src="https://s2.loli.net/2022/02/17/t1TmbBoGqR8ikEx.png" alt="17.jpg"></p>
+<p>这台笔记本乍一看和普通的笔记本没什么区别，但是当它打开屏幕之后，它的机身会将自身抬高，与底面形成一个可以让空气流入的间隙。在狭窄的笔记本中，空气流通的顺畅程度对散热效果的影响十分巨大，额外提供的进风口能够吸入更多的冷空气，GM501本身多达4个的出风口，让整体散热能力又提升了一个档次，价格也提升了个1档次。</p>
+<p><img src="https://s2.loli.net/2022/02/17/wNkE53S1szHdBIf.jpg" alt="18.jpg"></p>
+<p>总结来说，笔记本产品的散热思路现在大体分为两种，这是由于笔记本产品的两极分化，需要极端性能的产品线就加大厚度，配置更多更粗的热管与更强力的风扇。需要便携续航的产品直接将核心部件的功耗降低，简单粗暴，功耗低，相应的发热也就低了，只需要最基本的散热配置就足以满足需求，甚至直接靠被动散热就行了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章仅仅是粗略的介绍了一下水冷的基本概念，有很多地方没有提及，欢迎大家指正。</p>
+<p>笔记本散热能够聊的部分其实不多，一是因为笔记本产品形态已经十分成熟，而且自身限制较大，设计上已经将潜力挖掘的差不多了。</p>
+<p>我们下一篇将聊一聊游戏机的散热。感谢各位老爷看到这里了！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cooling/" rel="tag"># cooling</a>
+              <a href="/tags/pc/" rel="tag"># pc</a>
+              <a href="/tags/hardware/" rel="tag"># hardware</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/06/25/cool-01/" rel="prev" title="消费电子散热漫谈（其一）">
+                  <i class="fa fa-chevron-left"></i> 消费电子散热漫谈（其一）
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">奔街命</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
