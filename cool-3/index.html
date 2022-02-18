@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="作为整个电脑系统通常情况下耗电量最大的部件，显卡的发热量是十分恐怖的，这一期我们来聊一聊随着显卡性能的提升，厂商为GPU芯片所采取的散热措施。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="消费电子散热漫谈（其三）">
+<meta property="og:url" content="http://example.com/cool-3/index.html">
+<meta property="og:site_name" content="Boring Blog">
+<meta property="og:description" content="作为整个电脑系统通常情况下耗电量最大的部件，显卡的发热量是十分恐怖的，这一期我们来聊一聊随着显卡性能的提升，厂商为GPU芯片所采取的散热措施。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/cool-3/GF4MX440_MSI_fhq.jpg">
+<meta property="og:image" content="http://example.com/cool-3/GTX-1080TI-FE.jpeg">
+<meta property="og:image" content="http://example.com/cool-3/Vega.jpg">
+<meta property="og:image" content="http://example.com/cool-3/XTX-1950-PRO.jpg">
+<meta property="og:image" content="http://example.com/cool-3/8800Ultra_fhq.jpg">
+<meta property="og:image" content="http://example.com/cool-3/watermark,image_d2F0ZXJtYXJrLnBuZw,g_se,x_10,y_10.png">
+<meta property="og:image" content="http://example.com/cool-3/a.jpg">
+<meta property="og:image" content="http://example.com/cool-3/ROG-1080.jpg">
+<meta property="og:image" content="http://example.com/cool-3/Asuss-Republic-of-Gamers-launches-flagship-store-in-Bangalore.jpg">
+<meta property="og:image" content="http://example.com/cool-3/asus-strix-rog-1080ti-pcb.jpg">
+<meta property="og:image" content="http://example.com/cool-3/Poseidon-Banner.png">
+<meta property="og:image" content="http://example.com/cool-3/Poseidon.png">
+<meta property="og:image" content="http://example.com/cool-3/msi-geforce-gtx-1080-ti-gaming-x-11gb.jpg">
+<meta property="og:image" content="http://example.com/cool-3/msi_geforce_gtx_1080_ti_1350788.jpg">
+<meta property="article:published_time" content="2018-07-23T13:59:51.000Z">
+<meta property="article:modified_time" content="2022-02-18T01:44:43.805Z">
+<meta property="article:author" content="奔街命">
+<meta property="article:tag" content="cooling">
+<meta property="article:tag" content="pc">
+<meta property="article:tag" content="hardware">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/cool-3/GF4MX440_MSI_fhq.jpg">
+
+
+<link rel="canonical" href="http://example.com/cool-3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/cool-3/","path":"cool-3/","title":"消费电子散热漫谈（其三）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>消费电子散热漫谈（其三） | Boring Blog</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="https://blog-api-82lyjp492-jamin3125.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Boring Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">database cannot give you any conclusion</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E4%BB%99%E8%BF%87%E6%B5%B7%E7%9A%84%E6%97%B6%E4%BB%A3"><span class="nav-number">1.</span> <span class="nav-text">八仙过海的时代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%A0%E5%AE%9A%E5%9F%BA%E7%9F%B3%EF%BC%8C%E5%85%AC%E7%89%88%E8%AE%BE%E8%AE%A1%E5%87%BA%E5%9C%BA"><span class="nav-number">2.</span> <span class="nav-text">奠定基石，公版设计出场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%89%8D%E6%98%AF%E7%8E%8B%E9%81%93"><span class="nav-number">3.</span> <span class="nav-text">性能才是王道</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">奔街命</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/cool-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="奔街命">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Boring Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          消费电子散热漫谈（其三）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-23 21:59:51" itemprop="dateCreated datePublished" datetime="2018-07-23T21:59:51+08:00">2018-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-02-18 09:44:43" itemprop="dateModified" datetime="2022-02-18T09:44:43+08:00">2022-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hardware/" itemprop="url" rel="index"><span itemprop="name">hardware</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/cool-3/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/cool-3/" data-xid="/cool-3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/cool-3/" class="post-meta-item leancloud_visitors" data-flag-title="消费电子散热漫谈（其三）" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>作为整个电脑系统通常情况下耗电量最大的部件，显卡的发热量是十分恐怖的，这一期我们来聊一聊随着显卡性能的提升，厂商为GPU芯片所采取的散热措施。</p>
+<span id="more"></span>
+
+<h2 id="八仙过海的时代"><a href="#八仙过海的时代" class="headerlink" title="八仙过海的时代"></a>八仙过海的时代</h2><p>在消费电子散热漫谈（其一）中提到，PC硬件发展早期，由于芯片自身的集成度相对来说比较低，性能较差，还不需要主动散热手段来帮助其降低温度。显卡作为新事物，发展程度远低于CPU，产生的热量就更低了。在显卡发展早期，所有的产品都是一块光秃秃的板子，上面焊接了各种零部件。</p>
+<p>随着Nvidia正式确立了“GPU”芯片的地位，图形芯片的性能超脱了摩尔定律的桎梏，开始飞速增长。仅仅“裸奔”已经无法压制住越来越强大的核心，和CPU散热器的发展历程类似，各种各样的主动式散热器开始出现在新的显卡产品上。按照历史的进程，首先出场的是下吹式散热器，此时的散热器形态可谓百花齐放，脑洞大开。由于显卡是垂直插在主板的插槽上，不像CPU是平行于主板放置，而且主板插槽有可能不止安装显卡一个部件，还可能有其他的板卡，显卡散热器的“高度”就受到了非常严格的限制，只能横向展开。</p>
+<p>​               <img src="/cool-3/GF4MX440_MSI_fhq.jpg" alt="GF4MX440_MSI_fhq"></p>
+<p>上面都是Nvidia GeForce MX440这一经典的甜品卡，虽然是同样的型号，但散热器造型完全不一样。一方面GPU芯片的性能虽然比起以前有了很大的提升，毕竟还是早期的产品，性能与发热量再高也高不到哪里去，厂商只要放一个风扇吹就行，另一方面是为了在长得都差不多的显卡产品中突出自己的特色。在RGB没有兴起的时代，大家都是一块PCB板，几颗芯片贴在上面，为了提高自己产品的辨识度，有的厂商换了PCB板的颜色，有的就在散热器的造型上做文章，有兴趣的朋友可以自己搜索一下10多年前的显卡产品的样子。</p>
+<p>回到这时候的散热器，其性能只能说够用，其结构就是一个拍扁了的CPU下吹式散热器，标准的散热鳍片+风扇的设计，我就不赘述了，如果不是很了解的同学可以去看看以前的文章。</p>
+<h2 id="奠定基石，公版设计出场"><a href="#奠定基石，公版设计出场" class="headerlink" title="奠定基石，公版设计出场"></a>奠定基石，公版设计出场</h2><p>很多刚入门PC硬件的朋友对老司机们常说的公版显卡、非公显卡等名词不是很理解，这里我简单介绍一下。</p>
+<p>两大PC显卡芯片提供商Nvidia与AMD（ATi）目前均只负责芯片的设计工作（其中AMD以前是有自己的晶圆工厂Global Foundries，后因为财务等问题将其出售），具体的生产工作都交给代工厂来完成，一块显卡的简要生产流程如下：</p>
+<ol>
+<li>芯片厂商将设计图交给<strong>芯片代工厂</strong>进行流片成功后，大规模生产<strong>芯片</strong></li>
+<li>各显卡品牌，如华硕、微星、EVGA等，从芯片厂商处购买<strong>芯片</strong>，在自己的工厂（或者是代工厂）组装显卡成品</li>
+<li>显卡经过测试后运往各地的代理商</li>
+<li>代理商再根据不同的渠道送到消费者手上</li>
+</ol>
+<p>在这一流程中，芯片厂商为了让购买自己芯片的各大品牌了解、熟悉自己的产品，会提供一份官方的显卡设计模板供这些品牌进行参考，内容包括：应该使用什么样的电源电压参数、PCB板应该如何制造、搭配何种散热能力的散热器，出厂时应该设置多少频率等等，这就是所谓的公版设计。</p>
+<p>但是公版设计对芯片的性能调教以及散热器的设计十分保守，很多厂商为了提高自己产品的竞争力，在公版设计的基础上进行了二次设计，甚至是完全抛弃了公版设计，重新设计了PCB底板、大幅度提高频率以及换用性能更强的散热器，这样的产品就被称为非公版设计。</p>
+<p>在公版设计中，为了让最后的显卡成品能够尽可能多地在各种环境下正常工作，如何选择合适的散热器成为了非常重要的一环。我们先来看看典型的公版显卡：</p>
+<p><img src="/cool-3/GTX-1080TI-FE.jpeg" alt="1"></p>
+<p><img src="/cool-3/Vega.jpg" alt="Vega"></p>
+<p>以上这两块是Nvidia和AMD目前的消费级旗舰显卡的公版型号，我们可以看到，除了一个四四方方、一个棱角分明，大体上的结构是相似的，我们再往前看看，以前的公版设计是怎么样的：</p>
+<p><img src="/cool-3/XTX-1950-PRO.jpg" alt="XTX 1950 PRO"></p>
+<p><img src="/cool-3/8800Ultra_fhq.jpg" alt="8800Ultra_fhq"></p>
+<p>这下应该能看的比较明显了，圆形的风扇平行地放置在散热鳍片的右边，这个结构是不是有点眼熟：</p>
+<p><a target="_blank" rel="noopener" href="https://image.gcores.com/70a30172-ff07-49ea-8ff5-94cf9d66503e.png?x-oss-process=image/quality,q_90/watermark,image_d2F0ZXJtYXJrLnBuZw,g_se,x_10,y_10"><img src="/cool-3/watermark,image_d2F0ZXJtYXJrLnBuZw,g_se,x_10,y_10.png" alt="img"></a></p>
+<p>没错，这和我们上期聊过的笔记本大部分散热器结构基本一致，除了没有热管以外。高转速的风扇从显卡前面吸入冷空气，空气流过芯片上方的散热鳍片带走热空气，达到降低元器件温度的效果。</p>
+<p>从结果上来看，这样的设计比下吹式显卡散热器的优点在于：</p>
+<ul>
+<li>厚度可以控制的很薄，因为是平行排布散热系统</li>
+<li>对机箱没有要求，只要能塞得下显卡就能正常工作</li>
+<li>结构简单、成本低，易生产</li>
+</ul>
+<p>这种“涡轮”散热器被Nvidia和AMD作为公版标配的主要原因在于第二点，不需要特别的风道支持就能够工作，保证了最大的兼容性，作为设计参考是最佳选择。但这样设计也有问题，而且是很关键的那种，散热性能比较差。</p>
+<p>在一个散热系统里，最重要的就是散热鳍片与流动空气的接触面积，侧吹式散热器由于其排布方式决定了冷空气能吹过的散热鳍片横截面积是相当有限的，加上显卡自身的限制（垂直安装），不可能将散热鳍片做的很厚。你可能会说，既然不能变厚，那么变宽不行吗？很遗憾，这也很难做到，因为显卡的PCB板上有很多零部件，风扇能放的位置十分有限，而且就算变宽了，对散热效率的提升也很有限。</p>
+<p>所以虽然适用范围广，但是对于越来越热的显卡芯片，只靠“涡轮”散热器已经不够了，为此便有厂商推出了非公版设计的散热器。</p>
+<h2 id="性能才是王道"><a href="#性能才是王道" class="headerlink" title="性能才是王道"></a>性能才是王道</h2><p>2007年发布的Radeon HD 2900 XT是AMD最新的旗舰显卡，搭载了R600核心，7亿晶体管数量，512MB显存的规格让其成了一头不折不扣的性能野兽。而高达250W的峰值功耗也让HD 2900 XT的公版散热器不堪重负，在这时，第三方散热器厂商Arctic推出了针对250W TDP显卡的经典散热器产品线：Arctic Accelero Xtreme系列。</p>
+<p>在CPU散热器领域里，下吹式散热器是低成本与低性能的代名词，而在显卡散热器里，下吹式因为其设计与结构比起侧吹式的涡轮散热器有着更高的散热能力。以Arctic Accelero Xtreme系列为例，我们来看看下吹式显卡散热器的设计思路。</p>
+<p><img src="/cool-3/a.jpg" alt="a"></p>
+<p>不同于显卡的早期下吹式散热器那小巧可爱的风扇，一眼看过去Arctic Cooling Accelero Xtreme的三风扇十分霸气，纯黑的颜色与巨大的体积，三个风扇在提供可观风量的同时，还能保持较低的转速，降低运行时的噪音。但实现高效率散热的根本保障还是那横跨了整块显卡的散热鳍片与热管的组合。相对于平行排列的涡轮式散热器，垂直排布的下吹式散热器有更多的空间与可能来实现散热系统的组建。热管的加入能让芯片所产生的热量更快速地散布到散热鳍片中去，而三风扇所提供的风量，配合宽广的散热鳍片能最大效率的将热量给吹走。你可能会问，为什么这时候的下吹式散热器能不受体积的限制，做成这样子呢？这主要是由于，随着技术的进步，原本需要单独插在插槽上的大部分板卡都被直接集成在了主板上，比如网卡与声卡，所以大部分电脑内，只会插一张显卡，显卡的体积限制就放宽了很多。</p>
+<p>Arctic为HD 2900 XT推出的这款第三方散热器为后来几乎所有的非公显卡散热器所借鉴，我们接下来看看一些人气比较高的系列。</p>
+<p>首先出场的是华硕（ASUS）旗下的高端品牌，玩家国度（Republic of Gamers）的显卡系列：Strix猛禽。</p>
+<p><img src="/cool-3/ROG-1080.jpg" alt="ROG 1080"></p>
+<p>败家之眼名声在外，基本上只要看到这只眼睛，你的钱包就会迅速变小。华硕作为台湾企业，技术实力毋庸置疑，更难能可贵的是，这是一家非常懂营销的公司。</p>
+<p>在PC DIY市场越来越不景气的情况下，华硕果断推出了玩家国度子品牌，专为高端DIY玩家打造，最早的玩家国度品牌的主要产品为主板，后面扩展到显卡、游戏外设、笔记本、显示器等全方位覆盖，高端的定位带来的是高利润率与更广的品牌知名度，华硕成功的让广大玩家群体记住了这只眼睛。</p>
+<p><img src="/cool-3/Asuss-Republic-of-Gamers-launches-flagship-store-in-Bangalore.jpg" alt="Asuss-Republic-of-Gamers-launches-flagship-store-in-Bangalore"></p>
+<p>Strix猛禽作为华硕显卡的高端产品线，以其标志性的RGB散热器著称，随着Nvidia发布10系显卡，Strix系列的散热器也从双风扇时代进入到了三风扇时代。其标志性的DirectCU技术也来到了第三代，DirectCU技术指的是热管直接接触GPU核心芯片，而不像普通的散热器还要多一层阻隔。</p>
+<p>通过拆机图我们可以看到，ROG Strix 1080 Ti的散热器搭载了豪华的六（si）根热管，配合三个强力风扇可以保证这颗Pascal核心冷静地持续运行，值得一提的是这个散热器还支持智能启停技术，在核心温度比较低时，风扇不会运行，只有在超过设定的温度时才会启动，更好的降低了整机运行时的噪音。</p>
+<p><img src="/cool-3/asus-strix-rog-1080ti-pcb.jpg" alt="asus-strix-rog-1080ti-pcb"></p>
+<p>但这并不是华硕最高端的系列，华硕顶级显卡旗舰当属ROG Poseidon系列，最新的ROG Poseidon GTX 1080 ti是一款自带水冷接口的混合式（Hybrid）散热显卡，在默认情况下，它自带的散热器以风冷进行散热，而当接入水冷管路之后，瞬间变身成为一体式水冷散热。一般的水冷显卡都是冷排冷头分离式的设计，而ROG Poseidon将冷排、风扇、冷头整合在了一起，实现更好的体积控制（和一般的2.5槽位显卡一样的体积），更强的散热效果，是华硕显卡散热技术集大成之作。</p>
+<p><img src="/cool-3/Poseidon-Banner.png" alt="Poseidon Banner"></p>
+<p><img src="/cool-3/Poseidon.png" alt="Poseidon"></p>
+<p>聊完了华硕，我们来说说微星（MSI），微星显卡的高端产品线是Gaming X系列，其标志性的红色外壳散热器使其得到了“红龙”的名号。红龙系列的散热器采用了搭载Twin Frozr技术的双风扇配置，不同于华硕10系Strix显卡的三风扇配置，红龙虽然只有两个风扇，但直径更大，其最新的专利风扇扇叶设计可以提供更强的风压，让冷空气直达核心，红龙的散热效果要略强于Strix系列。</p>
+<p><img src="/cool-3/msi-geforce-gtx-1080-ti-gaming-x-11gb.jpg" alt="msi-geforce-gtx-1080-ti-gaming-x-11gb"></p>
+<p>和Strix一样，红龙也不是微星显卡的旗舰型号，MSI GeForce GTX 1080Ti Lightning Z是微星本代显卡的旗舰款，散热技术上没有什么特别的地方，但闪电系列以优异的超频潜力著称，常年处于各种超频榜单的前列，每一颗核心都是经过精心挑选的。</p>
+<p><img src="/cool-3/msi_geforce_gtx_1080_ti_1350788.jpg" alt="msi_geforce_gtx_1080_ti_1350788"></p>
+<p>还有很多高端显卡系列我就不一一点名了，虽然它们都有很多名字看起来就很厉害的散热技术，其实都是大同小异的东西，我就选了两个典型给大家看一看。不过还有一类显卡的散热方式不能忘记，那就是水冷了。</p>
+<p>看过上一期的朋友肯定知道水冷分为分体式和一体式，分体式我这里就不展开了，主要讲一讲一体式水冷。</p>
+<p>海盗船作为一个硬件周边的知名厂商，可以说除了板卡（显卡、主板等）不做，别的都做，但是也有例外，它和微星合作出了一款一体式水冷显卡，微星负责提供显卡的PCB版等核心电路，而海盗船提供一体式水冷的冷头、冷排风扇等。对于一体式水冷显卡这一品类来说，产品同质化程度比普通的风冷显卡更高，究其原因是因为大部分厂商自身也就是个贴牌产品，主要的一体式水冷技术掌握在极个别厂家手里，可以说市场上大部分一体式水冷产品都是一个厂出来的。如知名的海盗船、NZXT等等，都是在Asetek公司的产品上进行二次定制的产品。</p>
+<p>好了，这期就到这里了，下期我们聊聊机箱的事儿，感谢各位老爷看到这儿！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cooling/" rel="tag"># cooling</a>
+              <a href="/tags/pc/" rel="tag"># pc</a>
+              <a href="/tags/hardware/" rel="tag"># hardware</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/cool-02/" rel="prev" title="消费电子散热漫谈（其二）">
+                  <i class="fa fa-chevron-left"></i> 消费电子散热漫谈（其二）
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">奔街命</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://blog-api-82lyjp492-jamin3125.vercel.app/","placeholder":"Please be nice","avatar":"mp","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/cool-3/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>
