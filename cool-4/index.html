@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="风道，风道，相信很多朋友在攒机的时候都听到过这两个字，风道设计是一款机箱产品中十分重要的组成部分，今天我们就来聊一聊机箱和风道的事情。 从主板盒到现代机箱很多装机玩家调侃，电脑机箱并不是必要的，不行的话随便找个鞋盒子或者主板盒就行了。这虽然只是一句调侃的话，但是主板盒&#x2F;鞋盒子在攒机的过程中还是可以起到一些作用的。一般有经验的装机玩家不会一股脑拆开所有零件的包装盒之后，直接往机箱里面装，而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="消费电子散热漫谈（其四）">
+<meta property="og:url" content="http://example.com/cool-4/index.html">
+<meta property="og:site_name" content="Boring Blog">
+<meta property="og:description" content="风道，风道，相信很多朋友在攒机的时候都听到过这两个字，风道设计是一款机箱产品中十分重要的组成部分，今天我们就来聊一聊机箱和风道的事情。 从主板盒到现代机箱很多装机玩家调侃，电脑机箱并不是必要的，不行的话随便找个鞋盒子或者主板盒就行了。这虽然只是一句调侃的话，但是主板盒&#x2F;鞋盒子在攒机的过程中还是可以起到一些作用的。一般有经验的装机玩家不会一股脑拆开所有零件的包装盒之后，直接往机箱里面装，而">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-22T08:57:48.000Z">
+<meta property="article:modified_time" content="2022-02-22T08:59:03.684Z">
+<meta property="article:author" content="奔街命">
+<meta property="article:tag" content="cooling">
+<meta property="article:tag" content="pc">
+<meta property="article:tag" content="hardware">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/cool-4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/cool-4/","path":"cool-4/","title":"消费电子散热漫谈（其四）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>消费电子散热漫谈（其四） | Boring Blog</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="https://blog-api-82lyjp492-jamin3125.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Boring Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">database cannot give you any conclusion</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E4%B8%BB%E6%9D%BF%E7%9B%92%E5%88%B0%E7%8E%B0%E4%BB%A3%E6%9C%BA%E7%AE%B1"><span class="nav-number">1.</span> <span class="nav-text">从主板盒到现代机箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E6%84%8F%E7%A9%BF%E5%A0%82%E9%A3%8E"><span class="nav-number">2.</span> <span class="nav-text">有意穿堂风</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%91%E8%B5%B0%E5%81%8F%E9%94%8B%E7%9A%84%E9%93%B6%E6%AC%A3"><span class="nav-number">3.</span> <span class="nav-text">剑走偏锋的银欣</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%AE%B9%E5%B0%8F%E8%A7%91%E7%9A%84%E6%AD%A3%E8%B4%9F%E5%8E%8B"><span class="nav-number">4.</span> <span class="nav-text">不容小觑的正负压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">奔街命</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/cool-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="奔街命">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Boring Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          消费电子散热漫谈（其四）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-02-22 16:57:48 / 修改时间：16:59:03" itemprop="dateCreated datePublished" datetime="2022-02-22T16:57:48+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hardware/" itemprop="url" rel="index"><span itemprop="name">hardware</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/cool-4/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/cool-4/" data-xid="/cool-4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/cool-4/" class="post-meta-item leancloud_visitors" data-flag-title="消费电子散热漫谈（其四）" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>风道，风道，相信很多朋友在攒机的时候都听到过这两个字，风道设计是一款机箱产品中十分重要的组成部分，今天我们就来聊一聊机箱和风道的事情。</p>
+<h2 id="从主板盒到现代机箱"><a href="#从主板盒到现代机箱" class="headerlink" title="从主板盒到现代机箱"></a>从主板盒到现代机箱</h2><p>很多装机玩家调侃，电脑机箱并不是必要的，不行的话随便找个鞋盒子或者主板盒就行了。这虽然只是一句调侃的话，但是主板盒&#x2F;鞋盒子在攒机的过程中还是可以起到一些作用的。一般有经验的装机玩家不会一股脑拆开所有零件的包装盒之后，直接往机箱里面装，而是会将主板放在主板盒上，先把CPU、内存、散热器以及显卡先插到主板上，看看有没有出问题的部件，这样比起全部用螺丝固定好之后再开机更加稳妥，而且方便用排除法检查哪里出了问题，毕竟出了问题再拆下来还是十分麻烦的。</p>
+<span id="more"></span>
+
+<p>机箱对于一台电脑来说，最重要的就是给主板等零件提供一个保护，避免受到水、或者异物的损坏，还可以防电磁干扰，但这样做也是有代价的，那就是散热效果了。流通顺畅的空气对散热十分重要，机箱为了保护内部的零件必须将暴露的空间减小，以降低异物入侵的可能性。以前芯片的性能不是很高（我感觉我每篇都要说一次这句话），所以不需要主动式散热器，那时候的机箱就是纯粹的铁盒子，封的严严实实，前后左右除了必要的开口，没有给风扇预留位置，比如下面这个：</p>
+<p>这种情况一直持续到了21世纪初期，此时的芯片性能有了长足的进步，各式各样的主动式散热器也开始出现在了电脑机箱内，为了给这些散热器提供足够的气流，一些机箱生产厂商开始在机箱后部开孔并加装了散热风扇来进行辅助散热。</p>
+<p>​        此处应有 CM 690 PC Chassis</p>
+<p>这一时期的机箱的典型外观就是一个长方体的大箱子，棱角分明，前面有很多横条，用来放置DVD光驱，一个大大的电源键和一个小一点的重启键，基本上都是千篇一律的造型。风道的概念还没有出现，在背部有一个散热风扇辅助就很不错了，不会让内部过热，达到了所需要的散热效果。</p>
+<p>到了2006年，市场上开始出现了针对显卡散热设计的机箱，这些机箱最大的特点就是在前面板设置了进风风扇位，这也是为了应对显卡性能暴涨所带来的发热量，在这些前进风的机箱中，比较有代表性的便是银欣（SilverStone） TJ09。</p>
+<p>​        此处应有SilverStone TJ09 </p>
+<p>我们可以看到，为了不影响当时主流的DVD光驱的安装，这款机箱的前置风扇位被安装在了机箱内部一个比较独特的位置，为了让这颗进风风扇发挥全部作用，机箱在两侧开孔，作为进风口，实现了前进后出的经典风道。</p>
+<p>这样的配置也成为了现代机箱的常见做法。</p>
+<h2 id="有意穿堂风"><a href="#有意穿堂风" class="headerlink" title="有意穿堂风"></a>有意穿堂风</h2><p>首先要明确一点，好的风道设计只是最大可能地帮助散热系统发挥出它的理论性能，实际上决定最终散热效果的，还是需要看具体的散热器与搭配，毕竟散热系统的木桶效应十分明显。</p>
+<p>我们先从最常见的风道来介绍起：<strong>前进后出型</strong>。</p>
+<p>顾名思义，空气从机箱的前面进入再从后面排出，在这一过程中带走机箱内部芯片等零部件产生的热量，这样的风道设计实现起来最简单，对于机箱本身的设计压力也是最小的：你只要保证没有奇奇怪怪的东西挡住进风口和出风口，就完成了风道设计，就是这么简单。</p>
+<p>99%的中塔机箱都是采用的这样的设计，我选择了一款高端机箱来解释前进后出的设计思路：</p>
+<p>![h500 front](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\h500 front.png)</p>
+<p>上图是Cool Master最新推出的H500M机箱，我们可以看到前面有非常醒目的两颗巨大R!G!B!风扇，我们再来看看里面是什么样的。![h500m side](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\h500m side.png)</p>
+<p>通过评测可以看出，H500M现在处于散热性能第一档的位置。![H500M test](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\H500M test.png)</p>
+<p>那么H500M为什么可以取得如此好的散热效果呢，主要就是因为它前面两个巨大的20cm风扇来提供充足的进风风量。这是一款售价高达1499元人民币的旗舰级机箱，其前代作品H500P&#x2F;H500P Mesh（国内未上市）广受玩家的欢迎，一方面因为它的高颜值，另一方面就是它前面的两颗巨大的20cm直径的进风风扇了。这款机箱前面就是纯粹的两个风扇，把前面的空间全部用来进风。初代的H500P前面板大部分是钢化玻璃，只有两侧的网孔来进风，限制了进风量，影响了整体的散热效果。酷冷至尊在听取了市场的意见之后（其实是被YouTube上的视频博主喷了一顿惨的，就是上图中测评表的这个），先推出了H500P Mesh，然后再推出了上面这一款H500M。从第一张图我们可以明显看到，前面基本都是纯网格处理，最大程度的解放了这两颗巨大风扇的性能。</p>
+<p>我们在介绍机箱发展的时候提到，前进风主要是为了解决显卡发热越来越严重的问题而出现的。在上一期中我们提到，99%的非公版显卡所搭载的散热器都是下（上？）吹式散热器，这样可以获得比较好的散热效果，既然是下吹，那么这热风吹到哪里去了呢？想想显卡上面放的是什么，没错，就是CPU，而CPU散热器的主流又是侧吹式散热器，显卡散热器吹过来的风被侧吹式散热器吸进去，二次加热了CPU散热器的散热鳍片，这样又影响了CPU的温度，为了缓解这一问题，机箱通过在前面加装进风风扇，让冷空气源源不断的从前面进来，直接对着显卡吹，可以有效的降低显卡的温度，这也是为什么早期的前进风机箱都只在前面板的下部有一个进风风扇位。</p>
+<p>回到H500M，从第二张图我们可以看到，机箱内部是一马平川，在显卡与进风风扇之间什么都没有，在风扇和机箱外面之间，只有一层薄薄的防尘网格，将空气流通的阻碍降到最低，尽可能地降低显卡的温度，从而降低机箱内整体的问题。</p>
+<p>也就是说，前进后出风道最大的目的就是<strong>提供尽可能多的冷空气来降低显卡的温度</strong>，从而实现整体降温。</p>
+<p>其实H500M的顶部还有风扇位，这个地方也可以装两个前面那样的20cm大风扇，或者是普通的120mm&#x2F;140mm散热风扇，但是根据测试，顶部装不装风扇排风，对散热效果的影响微乎其微。顶部风扇位更多的是为了在使用水冷散热时方便放置冷排用的。</p>
+<p>对于普通级别的机箱来说，大部分的前面板都不会有H500M这样的进风量，所以散热效果不会有这么好，其实只要牺牲颜值，直接不装前面板也是可以达到差不多的散热效果的，当然代价就是每个月都得清一次灰了。</p>
+<p>​    此处应有 515ETG</p>
+<p>说完了前面，当然得聊一聊后面这个出风风扇了，作为最早出现在机箱上的风扇位，后出风风扇是最为重要的，这是因为它承担了将热量排出机箱的任务，不然就算你前面是直接空调对着吹，热量堆积在机箱内出不去也没用。</p>
+<p>大部分机箱都会标配一个风扇，这个风扇基本都是挂在机箱尾部用来出风，早期的机箱出风风扇位放哪里的都有，有中间的，有角落的，但是现代机箱的出风风扇位基本是固定的，如果你是使用的侧吹式CPU散热器，会发现这个风扇位正对着侧吹式散热器的鳍片，配合侧吹式散热器的风扇（前提是你没装反方向），可以直接将CPU产生的热量排出机箱。这个位置的风扇性能对整体散热效果的影响最大，一般的选择是一个高转速、大风量的出风扇。一个性能强劲的出风风扇可以让机箱内的热量飞速排出，所以大部分普通电脑只要有这一个风扇就行了。</p>
+<h2 id="剑走偏锋的银欣"><a href="#剑走偏锋的银欣" class="headerlink" title="剑走偏锋的银欣"></a>剑走偏锋的银欣</h2><p>2003年由前酷冷至尊员工成立的SilverStone（银欣）是一个致力于发烧级市场的品牌，旗下的产品以高性能著称。乌鸦（RAVEN）系列更是开创性的采用了<strong>垂直风道</strong>的设计，我们就来看一看这个风道和前面的前进后出风道有什么不一样的地方。</p>
+<p>我们请出的是乌鸦系列的经典产品：RV 02：![raven-rv02-front](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\raven-rv02-front.jpg)</p>
+<p>以现在的审美眼光来看，这款机箱带有一点”土味“，亚克力侧透面板，前面是典型的方格设计，为了安装各类光驱。但是我们打开侧板，看到里面就会发现和普通机箱大不同的地方了。</p>
+<p>![raven-rv02-4l](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\raven-rv02-4l.jpg)</p>
+<p>显卡居然是竖着放的！银欣所主导的垂直风道设计与普通机箱的垂直风道设计最大的不同，就是主板是旋转了90°安装在机箱上的，原本在机箱后部的IO接口被移到了顶部，相对应的出风口也被移到了顶部，这样就从原来的前进后出的水平风道，变成了下进上出的垂直风道。</p>
+<p>银欣为什么要剑走偏锋，把主板转90°，让所有的线缆别扭的从机箱顶部连接呢？</p>
+<p>在这里我想先澄清一个误区，那就是TDP（Thermal Design Power），这是一个芯片的参数，直译过来的名称：</p>
+<blockquote>
+<p><strong>热设计功耗</strong>（<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%8B%B1%E8%AA%9E">英语</a>：<strong>T</strong>hermal <strong>D</strong>esign <strong>P</strong>ower，缩写 <strong>TDP</strong>，又译<strong>散热设计功率</strong>）的含义是当<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%99%B6%E7%89%87">芯片</a>达到最大负荷的时候〔单位为瓦（W）〕<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%86%B1%E9%87%8F">热量</a>释放的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8C%87%E6%A8%99">指标</a>，是电脑的冷却系统必须有能力驱散热量的最大限度，但不是芯片释放热量的功率。    – Wikipedia</p>
+</blockquote>
+<p>很多人直接将TDP数值等同于芯片消耗的电源瓦数，这是非常错误的理解，TDP的主要作用是为了给散热系统的设计与搭建做参考用的，在散热器的包装与说明上，表示该产品的散热能力时也是使用TDP来作单位的。一块TDP为100W的CPU，不代表它实际消耗的电源瓦数为100W，而是它在正常工作时，需要100W散热能力来消散它所产生的热量，才能维持正常的性能输出。</p>
+<p>我们来看看一台PC系统内各个部件的常见TDP数值（以下均为正常使用，未超频）：</p>
+<ul>
+<li>普通级台式机CPU：45W - 65W</li>
+<li>旗舰级台式机CPU：65W - 120W</li>
+<li>入门级显卡：30W - 50W</li>
+<li>甜品级显卡：120 - 200W</li>
+<li>旗舰级显卡：150 - 350W</li>
+</ul>
+<p>我们可以看到，排除Intel Core i7 7980XE这种超频后电源消耗达到500W的恐怖存在，同级别显卡的TDP数值一般是要高于同级别CPU的。前进后出的风道设计毕竟是一个妥协的产物，大部分散热设计都向CPU倾斜，机箱内部的发热大户显卡由于安装的位置原因，虽然有进风风扇吸入冷空气辅助散热，但是出风风扇并不能直接将采用非公设计的显卡所产生的热量排出，造成了一定程度的热量堆积。</p>
+<p>银欣看到了这一缺陷，采用的解决思路与方法就是将主板调转90°安装，这样做的好处有以下几点：</p>
+<ul>
+<li>彻底解决了显卡散热器将热风吹向CPU散热器的问题</li>
+<li>让显卡产生的热量直接被吹出机箱内部，最大可能地减少热量堆积</li>
+<li>不会影响CPU的散热效果，甚至更好了</li>
+<li>更多的进风量</li>
+</ul>
+<p>我们从上图中可以看到，RV 02的底部有三个进风风扇，这三个风扇就是RV 02垂直风道性能优异的根本保障。不同于120mm&#x2F;140mm规格的普通风扇，这三个银欣定制的180mm风扇兼顾了静音与风量，从底部吸入的冷空气直达机箱顶部，垂直安装的显卡对空气流通的阻碍降到了最低。强有力的气流将非公显卡的下（侧？）吹式散热器产生的热量直接带走，有效地阻止了对CPU散热器的二次加热。就算是采用公版设计的涡轮散热器，强有力的冷空气直接从涡轮散热器内部通过，大幅降低了核心温度。垂直风道不仅让CPU与显卡的温度降低，最左边的那个风扇还能兼顾硬盘位与光驱位，让整个机箱内部其他部件的温度进一步降低。</p>
+<p>强大的进风风扇保证了足够的进风量，而旋转90°后安装的主板让显卡与CPU产生的热量可以同时全部排出机箱外部，最大程度的减少了热量的堆积，于是银欣的RV 02成为了风冷机箱最强大的存在之一。</p>
+<p>由于银欣乌鸦的高端定位与定价，销量其实很一般，而且垂直风道设计被银欣注册了专利，别的厂商也基本没有这样设计的产品，所以现在99%的ATX标准机箱都是前进后出的风道。只要机箱风道设计合理，有足够的风扇位，前进后出和垂直风道的表现不会相差太多。</p>
+<p>我们已经了解了两款风道设计优秀的机箱，在进入下一个部分之前，我们来了解一下风道设计不好的机箱是什么样的。</p>
+<p>![inwin 805](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\inwin 805.jpg)</p>
+<p>![inwin 805n](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\inwin 805n.jpg)</p>
+<p>迎广（inWin） 805是一款颜值满分的机箱产品，后期还推出了RGB版的805 Infinity，对于颜值党来说，简直就是犯罪。</p>
+<p>对于性能党来说也是犯罪，看完了外在，我们再看看里面：</p>
+<p>![inwin 805 inside](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\inwin 805 inside.png)</p>
+<p>典型的前进后出的风道设计，后面有一个出风风扇位，前面有两个进风风扇位，看起来还是比较可以的，没有什么大的毛病。但是让我们回想一下它的前面板是什么样的，没错，一整块，结结实实的钢化玻璃，联想到酷冷至尊H500M，这两款机箱就是两个极端：一个前面板基本什么都遮挡都没有，一个前面板基本不透风。这款机箱追求高颜值带来的副作用就是极其糟糕的散热表现：![805C-RED_14](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\805C-RED_14.jpg)</p>
+<p>冷空气被迫从底部进入机箱内部，还要经过硬盘位的阻拦，进风效率大打折扣。进风顺畅与否对显卡散热影响巨大，由于顶部也没有风扇位，只能靠机箱后面唯一的出风风扇来排出热量，前面的冷空气进风又不顺畅，显卡产生的热量大量堆积，将侧板的钢化玻璃局部加热到非常高的程度，于是就：![inwin 805 blow1](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\inwin 805 blow1.jpg)</p>
+<p>![inwin 805 blow2](C:\Users\benja\OneDrive\Writings\PC Cooling\Part IV\inwin 805 blow2.jpg)</p>
+<p>判断一个机箱的风道设计是否合理，最重要的就是看这款机箱对显卡散热的处理方式。因为一般情况下，机箱内部最大的发热源就是显卡，如果显卡的热量无法及时的排出机箱外，或者没有直接的冷空气来辅助散热，那么这款机箱内部的散热表现就不可能好。前进风顺畅的机箱，散热效果一般都不会太差。</p>
+<p>当然了，你要是不装显卡，基本不用考虑风道的问题，CPU再热，只要有个出风风扇，配合侧吹式散热器都不会有太大的问题。</p>
+<h2 id="不容小觑的正负压"><a href="#不容小觑的正负压" class="headerlink" title="不容小觑的正负压"></a>不容小觑的正负压</h2><p>在机箱这一相对封闭的系统内，空气在风扇的推力下，不停的流动，根据伯努利定律，流体的流动速度增加时，压力便会减少，此时机箱外部的空气会在大气压强的作用下从机箱的各个缝隙往里面跑，一同进来的还有灰尘。</p>
+<p>机箱内部聚积过多的灰尘会严重的影响散热器的效率，造成机箱内部的温度升高，触发芯片设定的温度墙，降低工作频率，损失性能。对于一个相对封闭的机箱来说，要实现100%无尘是很难的一件事情，因为你总是要开孔给风扇提供空间来吸入、排出空气，根据不同的风扇安装的数量与方向，有三种不同的机箱内气压情况：</p>
+<ul>
+<li><p>正压（Positive Pressure）</p>
+<p>当进风的风量大于出风的风量时，机箱内部的压强大于机箱外部，此时机箱内的空气倾向于逃逸出机箱内部，这样灰尘就不会从缝隙中进入机箱，因为机箱内部的空气正通过缝隙往外逃逸，将潜在的灰尘直接吹了出去。</p>
+</li>
+<li><p>平衡（Neutral Pressure）</p>
+<p>当进风的风量等于出风的风量时，机箱内外压强相等，此时灰尘也不会被吸入。</p>
+</li>
+<li><p>负压（Negative Pressure）</p>
+<p>当进风的风量小于出风的风量时，机箱内部的气压小于机箱外部，外部空气与灰尘会从各种缝隙进入机箱内部，这是最不利的情况。</p>
+</li>
+</ul>
+<p>一般来说，前进后出风道设计的机箱，只要保证前面的两个风扇位风扇方向是往里抽风，后面的出风风扇是往外出风，就是一个正压系统，但是对于特殊风扇位置设计的机箱就需要用户自己单独设计风道。如果不慎将风扇方向装反，那么整个机箱内部的温度就会大幅提升，还会有很多灰尘，清理起来就很麻烦了。正压系统还有一个意义就是可以更好的帮助非垂直风道机箱的显卡散热，因为理论上所有的空气都在往机箱外面跑，所以显卡散发的热量也会随着这些逃逸的空气散发到机箱外面，有利于显卡散热。如果是负压系统，那么被出风风扇排出去的热量极有可能重新回到机箱内部（就像我那样），造成二次加热，简而言之，尽可能的让你的机箱形成一个正压系统。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这一期简单的介绍了一下两大风道设计流派，其实机箱风道也好，散热也好，不同的产品不能一概而论，但是总体的原则是不变的：<strong>进风足，出风顺，这机箱的散热就有保障</strong>。</p>
+<p>是要高颜值闷罐，还是更静音更凉快，就取决于你自己啦，你说你都想要？那就加钱吧！</p>
+<p>下一期的主题还没想好，有什么想法或者建议欢迎在评论区指出，感谢各位老爷看到这里啦！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cooling/" rel="tag"># cooling</a>
+              <a href="/tags/pc/" rel="tag"># pc</a>
+              <a href="/tags/hardware/" rel="tag"># hardware</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/cool-3/" rel="prev" title="消费电子散热漫谈（其三）">
+                  <i class="fa fa-chevron-left"></i> 消费电子散热漫谈（其三）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/apple-silicon/" rel="next" title="无可复制的搅局者——Apple M1漫谈">
+                  无可复制的搅局者——Apple M1漫谈 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">奔街命</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://blog-api-82lyjp492-jamin3125.vercel.app/","placeholder":"Please be nice","avatar":"mp","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/cool-4/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>
