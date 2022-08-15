@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="2020年初下决心摆脱依靠路由器挂qbittorrent来下载的窘境，毕竟路由器孱弱的CPU还要负责其他的特殊功能，有点力不从心，当时选择的硬件平台是比较主流的华擎J3455-ITX，虽然不算贵，但也不便宜，不过性能是够的，但是现在肯定不推荐了，因为这一块主板有非常多的问题，尤其是装黑群晖系统。选择的DSM版本为x3617 6.17，这是当时最稳定，开机速度最快的版本，也有很完善的教程与资料，搞定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NAS折腾手记（网络篇）">
+<meta property="og:url" content="http://example.com/nas-2-0/index.html">
+<meta property="og:site_name" content="Boring Blog">
+<meta property="og:description" content="2020年初下决心摆脱依靠路由器挂qbittorrent来下载的窘境，毕竟路由器孱弱的CPU还要负责其他的特殊功能，有点力不从心，当时选择的硬件平台是比较主流的华擎J3455-ITX，虽然不算贵，但也不便宜，不过性能是够的，但是现在肯定不推荐了，因为这一块主板有非常多的问题，尤其是装黑群晖系统。选择的DSM版本为x3617 6.17，这是当时最稳定，开机速度最快的版本，也有很完善的教程与资料，搞定">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807104812479.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807143304456.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807145721962.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807150034553.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807151800280.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807152439474.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807152907423.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807154040565.png">
+<meta property="og:image" content="http://example.com/nas-2-0/image-20220807154528949.png">
+<meta property="og:image" content="http://example.com/nas-2-0/IMG_8A0ACFD1BC58-1-9858621.jpeg">
+<meta property="article:published_time" content="2022-08-05T06:52:41.000Z">
+<meta property="article:modified_time" content="2022-08-07T08:14:22.528Z">
+<meta property="article:author" content="奔街命">
+<meta property="article:tag" content="nas">
+<meta property="article:tag" content="synogoly">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/nas-2-0/image-20220807104812479.png">
+
+
+<link rel="canonical" href="http://example.com/nas-2-0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/nas-2-0/","path":"nas-2-0/","title":"NAS折腾手记（网络篇）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NAS折腾手记（网络篇） | Boring Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Boring Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">database cannot give you any conclusion</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">核心思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">前置准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPS"><span class="nav-number">2.1.</span> <span class="nav-text">VPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E7%BA%A7%E5%9F%9F%E5%90%8D"><span class="nav-number">2.2.</span> <span class="nav-text">顶级域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker%E7%8E%AF%E5%A2%83"><span class="nav-number">2.3.</span> <span class="nav-text">Docker环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">frp内网穿透搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#frps%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="nav-number">3.1.</span> <span class="nav-text">frps服务端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frpc%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">3.2.</span> <span class="nav-text">frpc客户端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-Proxy-Manager"><span class="nav-number">4.</span> <span class="nav-text">Nginx Proxy Manager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">奔街命</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/nas-2-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="奔街命">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Boring Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NAS折腾手记（网络篇） | Boring Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NAS折腾手记（网络篇）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-05 14:52:41" itemprop="dateCreated datePublished" datetime="2022-08-05T14:52:41+08:00">2022-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-07 16:14:22" itemprop="dateModified" datetime="2022-08-07T16:14:22+08:00">2022-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/nas/" itemprop="url" rel="index"><span itemprop="name">nas</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>2020年初下决心摆脱依靠路由器挂qbittorrent来下载的窘境，毕竟路由器孱弱的CPU还要负责其他的特殊功能，有点力不从心，当时选择的硬件平台是比较主流的华擎J3455-ITX，虽然不算贵，但也不便宜，不过性能是够的，但是现在肯定不推荐了，因为这一块主板有非常多的问题，尤其是装黑群晖系统。选择的DSM版本为x3617 6.17，这是当时最稳定，开机速度最快的版本，也有很完善的教程与资料，搞定之后稳定运行了两年多的时间，没有一次自行死机的情况。不过随着长沙联通全面回收动态公网IP，无法从外网直接访问家里的NAS之后，我的手也痒了起来，解决内网穿透的问题，顺带升级一下DSM的版本，实现硬件解码4K电影，这一篇主要内容为<strong>0成本实现内网穿透，顶级域名申请，泛域名SSL证书以及免端口号访问内网NAS</strong>。</p>
+<span id="more"></span>
+
+<h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>联通还没有回收动态公网IP的时候，外网访问非常简单，直接申请一个域名，绑定DDNS服务即可，甚至连域名也不需要，有很多现成的免费DDNS服务，虽然可能速度有限制，但又不是不能用。但是很多地方的公网IP非常难要，甚至像长沙联通这种一刀切完全不给的就只能选择内网穿透的方式。</p>
+<p>目前比较主流的内网穿透模式有两种：</p>
+<ol>
+<li>FRP<ul>
+<li>优点：其他设备访问不需要安装客户端，一次配置，随时随地任意设备均可访问</li>
+<li>缺点：需要一个有固定公网IP的设备作为服务端，常用各路VPS云服务器，要走VPS服务器的流量，速度取决于VPS</li>
+</ul>
+</li>
+<li>ZeroTier为代表的虚拟局域网<ul>
+<li>优点：一般不需要固定公网IP的服务器，除非访问ZeroTier的根服务器速度非常慢</li>
+<li>缺点：需要给所有访问内网的设备单独安装客户端，比较麻烦</li>
+</ul>
+</li>
+</ol>
+<p>我选择的是FRP，因为比较懒，而且有可以永久免费使用的固定公网IP云服务器，比较适合作为FRP服务器。</p>
+<p>完整的网络链路图如下：</p>
+<p><img src="/nas-2-0/image-20220807104812479.png" alt="image-20220807104812479"></p>
+<h2 id="前置准备"><a href="#前置准备" class="headerlink" title="前置准备"></a>前置准备</h2><h3 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h3><ul>
+<li><p>我使用的是Oracle Cloud的永久免费云服务器，最多可以开4个VPS实例，虽然配置不高（单核双线程，1G内存），但带宽和流量给的足</p>
+</li>
+<li><p>操作系统使用CentOS 7</p>
+</li>
+<li><p>固定公网IP地址，且没有被block</p>
+</li>
+<li><p>开放对应的端口（取决于你frps服务端的配置文件，端口可自定义）</p>
+</li>
+<li><p>解除访问IP限制</p>
+</li>
+</ul>
+<h3 id="顶级域名"><a href="#顶级域名" class="headerlink" title="顶级域名"></a>顶级域名</h3><ul>
+<li><p>我的域名是freenom注册的免费顶级域名，一年有效期，可一直免费续期</p>
+</li>
+<li><p>用来绑定frp服务，实现免端口访问内网服务</p>
+</li>
+<li><p>如果是国内的VPS，国内注册的域名，可能需要进行域名备案操作</p>
+</li>
+<li><p>如果是freenom注册的域名，不推荐解析到CloudFlare，因为后续自动化申请SSL证书会遇到问题</p>
+</li>
+<li><p>将泛域名解析指向VPS IP地址</p>
+</li>
+</ul>
+<h3 id="Docker环境"><a href="#Docker环境" class="headerlink" title="Docker环境"></a>Docker环境</h3><ul>
+<li>本文主要在群晖环境下使用Docker，unRaid或者威联通及其他环境原理共通，毕竟Docker</li>
+<li>提前获取群晖系统主要用户的<code>PGID</code>与<code>PUID</code>，需要正确设置用户群组与用户，保证后续Docker容器使用正常</li>
+</ul>
+<h2 id="frp内网穿透搭建"><a href="#frp内网穿透搭建" class="headerlink" title="frp内网穿透搭建"></a>frp内网穿透搭建</h2><h3 id="frps服务端"><a href="#frps服务端" class="headerlink" title="frps服务端"></a>frps服务端</h3><p>frps服务端的搭建非常简单，流程如下：</p>
+<ol>
+<li>登录VPS，通过wget下载最新的frp程序压缩包，注意不要选错相对应的软件与硬件平台，比如大部分VPS都是x86_64以及Linux的组合</li>
+<li>可以就地解压缩，也可以移到其他你想要存放的目录，然后确认目录与文件的权限</li>
+<li>配置frps.ini，可以参照我的配置：</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="comment"># 绑定的frp服务端口，frpc客户端配置的时候要填写同样的端口</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br><span class="line"><span class="attr">bind_udp_port</span> = <span class="number">7001</span></span><br><span class="line"><span class="attr">kcp_bind_port</span> = <span class="number">7000</span></span><br><span class="line"><span class="comment"># 绑定的http与https端口</span></span><br><span class="line"><span class="attr">vhost_http_port</span> = <span class="number">80</span></span><br><span class="line"><span class="attr">vhost_https_port</span> = <span class="number">443</span></span><br><span class="line"><span class="attr">dashboard_addr</span> = <span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="comment"># frp管理后台的端口</span></span><br><span class="line"><span class="attr">dashboard_port</span> = <span class="number">7500</span></span><br><span class="line"><span class="attr">log_file</span> = ./frps.log</span><br><span class="line"><span class="attr">log_level</span> = info</span><br><span class="line"><span class="attr">log_max_days</span> = <span class="number">3</span></span><br><span class="line"><span class="attr">disable_log_color</span> = <span class="literal">false</span></span><br><span class="line"><span class="comment"># 连接验证用的token，如果定义了的话，在frpc.ini里面也要填写</span></span><br><span class="line"><span class="attr">token</span> = <span class="number">12345678</span></span><br><span class="line"><span class="comment"># 允许通过frp访问的端口范围</span></span><br><span class="line"><span class="attr">allow_ports</span> = <span class="number">2000</span>-<span class="number">3000</span>,<span class="number">3001</span>,<span class="number">3003</span>,<span class="number">4000</span>-<span class="number">50000</span></span><br><span class="line"><span class="attr">max_pool_count</span> = <span class="number">5</span></span><br><span class="line"><span class="attr">max_ports_per_client</span> = <span class="number">0</span></span><br><span class="line"><span class="attr">tcp_mux</span> = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>保存frps.ini后启动frps服务端，建议配合<code>systemd</code>来实现自启动，具体方法可以参照<a target="_blank" rel="noopener" href="https://gofrp.org/docs/setup/systemd/">官方文档</a>。</li>
+</ol>
+<p>到这里VPS上的工作就完成了，接下来配置客户端。</p>
+<h3 id="frpc客户端"><a href="#frpc客户端" class="headerlink" title="frpc客户端"></a>frpc客户端</h3><ol>
+<li>我使用的DSM 6.23黑群晖自带Docker管理套件，在套间内的注册表选项卡里搜索frp，可以得到几个结果，我下载的是snowdreamtech&#x2F;frpc，注意不要下载到frps，那是服务端的镜像，选择latest即可，理论上frps和frpc的版本不需要一一对应，但保险起见，前一步在VPS上下载的是啥版本，frpc客户端也下载对应的即可。</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807143304456.png" alt="image-20220807143304456"></p>
+<ol start="2">
+<li>在本地新建一个<code>frpc.ini</code>的文本文件，建议使用vim或者VS Code创建，输入以下内容，这里的关键点在于frp里仅配置http与https请求指向，使用群晖上的反向代理服务器分配子域名进行反向代理，这样做的好处是frp配置一次之后就不用再管了，后续所有的工作可以通过反向代理服务器进行。直接将所有的http与https请求指向准备好的顶级域名就行了。</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = 你的VPS IP地址</span><br><span class="line"><span class="comment"># 和frps.ini里面的服务器端口一致</span></span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"><span class="comment"># 和frps.ini里面的token一致</span></span><br><span class="line"><span class="attr">token</span> = <span class="number">12345678</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果不需要远程SSH访问NAS的话，建议不配置SSH</span></span><br><span class="line"><span class="section">[ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = 你的NAS IP地址</span><br><span class="line"><span class="comment"># NAS的本地SSH端口</span></span><br><span class="line"><span class="attr">local_port</span> = 本地ssh端口</span><br><span class="line"><span class="comment"># 远程访问时的SSH端口</span></span><br><span class="line"><span class="attr">remote_port</span> = 远程ssh端口</span><br><span class="line"></span><br><span class="line"><span class="section">[http_proxy]</span></span><br><span class="line"><span class="attr">type</span> = http</span><br><span class="line"><span class="attr">local_ip</span> = 你的NAS IP地址</span><br><span class="line"><span class="comment"># http访问端口，如果配置其他反向代理服务器，可以写其他的端口，群晖自带的反向代理服务器会占用80和443</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">80</span></span><br><span class="line"><span class="comment"># 将所有访问域名的请求转到frp服务上</span></span><br><span class="line"><span class="attr">custom_domains</span> = *.你申请的顶级域名</span><br><span class="line"></span><br><span class="line"><span class="section">[https_proxy]</span></span><br><span class="line"><span class="attr">type</span> = https</span><br><span class="line"><span class="attr">local_ip</span> = 你的NAS IP地址</span><br><span class="line"><span class="comment"># https访问端口，如果配置其他反向代理服务器，可以写其他的端口，群晖自带的反向代理服务器会占用80和443</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">443</span></span><br><span class="line"><span class="comment"># 将所有访问域名的请求转到frp服务上</span></span><br><span class="line"><span class="attr">custom_domains</span> = *.你申请的顶级域名</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>将修改好的<code>frpc.ini</code>上传至NAS，然后在Docker套件对应的共享文件夹下面创建<code>frpc</code>文件夹，将<code>frpc.ini</code>粘贴到此文件夹下</li>
+<li>启动snowdreamtech&#x2F;frpc镜像，在存储空间选项中作如下配置，左侧的根据你的实际情况选择，右侧装载路径要完全一致，不能做任何改动</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807145721962.png" alt="image-20220807145721962"></p>
+<ol start="5">
+<li>网络选项卡勾选与host一致后，启动容器</li>
+<li>如果一切顺利，此时应该可以在容器-详情-日志里面看到以下内容：</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807150034553.png" alt="image-20220807150034553"></p>
+<p>我遇到的问题：</p>
+<ol>
+<li>cannot dial xxx.xxx.xxx.xxx:7000：这说明frpc客户端无法与frps服务端建立稳定连接，非常大概率是你的VPS IP地址被block了，换VPS的IP地址可以解决问题，如果换一次不行就多换几次，我换了四次才连通</li>
+<li>deadline reached：换VPS IP</li>
+<li>token错误：检查frps.ini和frpc.ini中的token值</li>
+</ol>
+<p>如果你能打开http:&#x2F;&#x2F;你的VPS IP地址:7500，进入frp的后台界面，说明你的frp内网穿透就成功了，接下来就要进入到实际访问的阶段了。</p>
+<h2 id="Nginx-Proxy-Manager"><a href="#Nginx-Proxy-Manager" class="headerlink" title="Nginx Proxy Manager"></a>Nginx Proxy Manager</h2><p>这是一款开源Nginx反向代理管理软件，如果不喜欢SSH到群晖里面写Nginx配置文件的话，这个还是很不错的，最重要的是内部集成了Let’s Encrypt的免费泛域名SSL申请功能，让我们从外网访问NAS更加安全一点（主要是不用看浏览器地址栏的“不安全”那三个字了）。安装过程如下：</p>
+<ol>
+<li>群晖Docker套件里面好像搜不到这个（试了下，搜jc21可以搜到），所以用docker compose的方式来安装，在之前frpc文件夹同级目录下新建一个文件夹，我将其命名为<code>npm</code>，如下图</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807151800280.png" alt="image-20220807151800280"></p>
+<ol start="2">
+<li>在本地创建一个<code>docker-compose.yml</code>的文件，同样推荐使用VS Code或者Vim等文本编辑器，填入以下内容，保存以后上传到刚才建立的<code>npm</code>文件夹</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: &#x27;jc21/nginx-proxy-manager:latest&#x27;</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    ports:</span><br><span class="line">      <span class="comment"># These ports are in format &lt;host-port&gt;:&lt;container-port&gt;</span></span><br><span class="line">      <span class="comment"># 这里的端口，冒号前面是自定义的80和443端口，要和frpc.ini里面的一致，81是后台管理端口，可以不用动</span></span><br><span class="line">      - &#x27;自定义80端口:80&#x27; <span class="comment"># Public HTTP Port</span></span><br><span class="line">      - &#x27;自定义443端口:443&#x27; <span class="comment"># Public HTTPS Port</span></span><br><span class="line">      - &#x27;81:81&#x27; <span class="comment"># Admin Web Port</span></span><br><span class="line">      <span class="comment"># Add any other Stream port you want to expose</span></span><br><span class="line">      <span class="comment"># - &#x27;21:21&#x27; # FTP</span></span><br><span class="line">    <span class="comment"># Uncomment the next line if you uncomment anything in the section</span></span><br><span class="line">    environment:</span><br><span class="line">    	<span class="comment"># 这里填写的PGID和PUID一定要是你自己群晖主要用户的值，具体获取可以百度</span></span><br><span class="line">      - <span class="attr">PGID</span>=用户组</span><br><span class="line">      - <span class="attr">PUID</span>=用户ID</span><br><span class="line">      - <span class="attr">TZ</span>=Asia/Shanghai</span><br><span class="line">      <span class="comment"># Uncomment this if you want to change the location of</span></span><br><span class="line">      <span class="comment"># the SQLite DB file within the container</span></span><br><span class="line">      <span class="comment"># DB_SQLITE_FILE: &quot;/data/database.sqlite&quot;</span></span><br><span class="line">      <span class="comment"># Uncomment this if IPv6 is not enabled on your host</span></span><br><span class="line">      <span class="comment"># DISABLE_IPV6: &#x27;true&#x27;</span></span><br><span class="line">    volumes:</span><br><span class="line">      - ./data:/data</span><br><span class="line">      - ./letsencrypt:/etc/letsencrypt</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>通过SSH访问群晖，通过<code>cd</code>命令进入到<code>npm</code>文件夹，我的<code>npm</code>文件夹完整路径为<code>/volume1/docker/npm</code>，然后输入<code>sudo docker-compose up -d</code>，就会自动下载并运行Nginx Proxy Manager镜像与容器，一定要加sudo，除非你默认使用root连接，个人不推荐，比较不安全</li>
+<li>如果一切顺利，可以在群晖Docker套件内的容器选项卡中看到运行的npm容器，如下图：</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807152439474.png" alt="image-20220807152439474"></p>
+<ol start="5">
+<li>输入http:&#x2F;&#x2F;你的NAS IP:81进入管理后台界面，第一次登录的默认邮箱为：<a href="mailto:&#97;&#x64;&#109;&#105;&#110;&#64;&#101;&#120;&#97;&#109;&#x70;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#97;&#x64;&#109;&#105;&#110;&#64;&#101;&#120;&#97;&#109;&#x70;&#108;&#x65;&#46;&#99;&#111;&#x6d;</a>，密码为：changeme，登陆进去之后修改登录邮箱与密码即可</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807152907423.png" alt="image-20220807152907423"></p>
+<ol start="6">
+<li>给自己的域名申请泛域名SSL证书，点击<code>SSL Certificates</code>，<code>Add SSL Certificate</code>，选择<code>Let&#39;s Encrypt</code>，在<code>Domain Names</code>里填写两个域名，第一个是<code>*.你申请的顶级域名</code>，第二个直接写<code>你申请的顶级域名</code>，不要加任何前缀，比如你申请的是<code>abc.com</code>，就不要写<code>www.abc.com</code></li>
+<li>然后接下来将<code>Use a DNS Challenge</code>选项打开，选择你的域名解析商，这时候需要暂停一下，因为这一步需要在域名解析商的后台申请一个API Token，具体的方法要看你的域名解析商，我本来是CloudFlare托管的，结果CloudFlare把freenom的白嫖域名全部限制不让通过API申请SSL证书，不得已我又转回到了腾讯云的dnspod，还好国外注册的域名和国外的VPS不需要域名备案</li>
+<li>搞定了API Token之后点Save就会开始自动调用<code>Certbot</code>开始申请泛域名证书了，有效期为3个月，到期自动续签，你也可以手动续签，如果失败了就多试几次，还不行就需要特别手段了</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807154040565.png" alt="image-20220807154040565"></p>
+<ol start="9">
+<li>添加本地服务反向代理，点击<code>Dashboard</code>回到首页，点击<code>Proxy Hosts</code>，<code>Add Proxy Host</code>，以我本地的<code>Jellyfin</code>媒体服务为例，我为其设置的访问端口为8097，然后我想通过<code>video</code>这个二级域名来通过外网直接访问，那么具体的设置如下：</li>
+</ol>
+<p><img src="/nas-2-0/image-20220807154528949.png" alt="image-20220807154528949"></p>
+<ol start="10">
+<li>然后在<code>SSL</code>选项卡中选择刚刚申请通过的泛域名SSL证书，勾选<code>Force SSL</code>即可打开强制HTTPS访问，点击保存后，即可通过<a target="_blank" rel="noopener" href="https://video.你申请的域名/">https://video.你申请的域名</a> 直接访问内网才能访问的<code>Jellyfin</code>服务，而且也能看到是通过HTTPS访问的，有一把🔒，截图是通过iPhone Safari浏览器4G网络访问：</li>
+</ol>
+<p><img src="/nas-2-0/IMG_8A0ACFD1BC58-1-9858621.jpeg" alt="IMG_8A0ACFD1BC58-1"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文中除了NAS、iPhone是需要花钱购置外，出现的所有软件、服务均为开源或免费的，所以综合成本为0。这一套frp内网穿透的瓶颈在于作为服务端的VPS与你本地网络的连通速度。我的Oracle Cloud VPS机房选在了Tokyo East，直接ping的话平均延迟为65.9ms，联通4G以及300M光纤的直连带宽在1.5MB&#x2F;s - 3.5MB&#x2F;s波动，非常接近我家里的上行极限（300Mbps下行，40Mbps上行），就是比较不稳定，所以在外面看动画片啥的没有问题，看4K以前不行，因为带宽扛不住，也不能硬件编码到1080p，这也是这次软件升级和折腾的主要原因。</p>
+<p>在解决了网络基础问题之后，我把个人博客也迁移到了NAS上，还有远程DSM管理，群晖Drive之类的服务都可以通过HTTPS的方式通过域名访问，不用再自己记端口号了，感觉还是很不错的，而且泛域名SSL证书可以让后续添加的二级域名自动获得SSL证书，简直是爽飞了！</p>
+<p>接下来会出一篇上面截图里那样的全自动化私人影音站的文章，下次再见啦～</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/nas/" rel="tag"># nas</a>
+              <a href="/tags/synogoly/" rel="tag"># synogoly</a>
+              <a href="/tags/web/" rel="tag"># web</a>
+              <a href="/tags/nginx/" rel="tag"># nginx</a>
+              <a href="/tags/docker/" rel="tag"># docker</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/apple-silicon/" rel="prev" title="无可复制的搅局者——Apple M1漫谈">
+                  <i class="fa fa-chevron-left"></i> 无可复制的搅局者——Apple M1漫谈
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">奔街命</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
