@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"slownas.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1时间是公元1998年，在微软的某个实验室中，一小撮工程师分解了几台Dell笔记本，将其组装成了一台基于Windows系统的游戏主机，这个小组希望创造一台可以和Sony PlayStation 2媲美的主机。 微软已经通过Windows 95以及一系列软件稳稳的占据了PC软件行业的领先地位，此时的比尔·盖茨正谋求着人们办公桌以外更大的版图——客厅。Sony的PlayStation主机正在主机市场上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新纪元主机的暗线斗争">
+<meta property="og:url" content="https://slownas.tk/hardware/%E6%96%B0%E7%BA%AA%E5%85%83%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%9A%97%E7%BA%BF%E6%96%97%E4%BA%89/index.html">
+<meta property="og:site_name" content="Boring Blog">
+<meta property="og:description" content="1时间是公元1998年，在微软的某个实验室中，一小撮工程师分解了几台Dell笔记本，将其组装成了一台基于Windows系统的游戏主机，这个小组希望创造一台可以和Sony PlayStation 2媲美的主机。 微软已经通过Windows 95以及一系列软件稳稳的占据了PC软件行业的领先地位，此时的比尔·盖茨正谋求着人们办公桌以外更大的版图——客厅。Sony的PlayStation主机正在主机市场上">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://slownas.tk/images/console/bill_gates_xbox.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/titanxputinforweb1.png">
+<meta property="og:image" content="https://slownas.tk/images/console/ps1Ridge_Racer.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/wolfenstein_3d.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/voodoo_1.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/GeForce_256.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/xbox.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/DirectX.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/windows_xp.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/nvidia_its_ment.png">
+<meta property="og:image" content="https://slownas.tk/images/console/ATi.png">
+<meta property="og:image" content="https://slownas.tk/images/console/RED_RING_OF_DEATH_by_juutin.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/transistor.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/xbox_360MB.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/PS3_MB.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/OpenGL.png">
+<meta property="og:image" content="https://slownas.tk/images/console/AMD.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/APU.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/Xbox-One-360-stack.png">
+<meta property="og:image" content="https://slownas.tk/images/console/Tegra.jpg">
+<meta property="og:image" content="https://slownas.tk/images/console/Shield.jpg">
+<meta property="article:published_time" content="2018-01-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-13T07:30:44.433Z">
+<meta property="article:author" content="奔街命">
+<meta property="article:tag" content="console">
+<meta property="article:tag" content="amd">
+<meta property="article:tag" content="nvidia">
+<meta property="article:tag" content="microsoft">
+<meta property="article:tag" content="gpu">
+<meta property="article:tag" content="cpu">
+<meta property="article:tag" content="sony">
+<meta property="article:tag" content="nintendo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://slownas.tk/images/console/bill_gates_xbox.jpg">
+
+<link rel="canonical" href="https://slownas.tk/hardware/%E6%96%B0%E7%BA%AA%E5%85%83%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%9A%97%E7%BA%BF%E6%96%97%E4%BA%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>新纪元主机的暗线斗争 | Boring Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Boring Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">database cannot give you any conclusion</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://slownas.tk/hardware/%E6%96%B0%E7%BA%AA%E5%85%83%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%9A%97%E7%BA%BF%E6%96%97%E4%BA%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/dora.jpg">
+      <meta itemprop="name" content="奔街命">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Boring Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          新纪元主机的暗线斗争
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-01-18 00:00:00" itemprop="dateCreated datePublished" datetime="2018-01-18T00:00:00+08:00">2018-01-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-13 15:30:44" itemprop="dateModified" datetime="2024-01-13T15:30:44+08:00">2024-01-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hardware/" itemprop="url" rel="index"><span itemprop="name">hardware</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>时间是公元1998年，在微软的某个实验室中，一小撮工程师分解了几台Dell笔记本，将其组装成了一台基于Windows系统的游戏主机，这个小组希望创造一台可以和Sony PlayStation 2媲美的主机。</p>
+<p>微软已经通过Windows 95以及一系列软件稳稳的占据了PC软件行业的领先地位，此时的比尔·盖茨正谋求着人们办公桌以外更大的版图——客厅。Sony的PlayStation主机正在主机市场上大杀四方，不久后PlayStation 2也即将发布，越来越多的游戏开发者开始为非Windows平台开发游戏，这对微软来说也不是一个好消息。微软决定全面进入家用游戏主机市场，在Xbox研发的过程中，一家图形公司进入了他们的眼帘，这就是Nvidia。</p>
+<span id="more"></span>
+
+<p><img src="/images/console/bill_gates_xbox.jpg" alt="bill gates xbox"></p>
+<p><img src="/images/console/titanxputinforweb1.png" alt="titanxputinforweb1"></p>
+<p>在上个世纪末的游戏业界，主机游戏的开发与PC游戏的开发远没有现在这么统一，追根溯源是因为两者之间的硬件基础可谓天差地别。不同品牌的主机，对游戏画面、游戏音效的实现原理完全不同，这就意味着游戏的开发流程也必须是独一无二的。主机游戏画面的3D化普及，是通过1993年发售的初代PlayStation才得以实现，而碰巧的是3D画面的PC游戏，自1992年发售的《德军总部：3D》后才开始井喷。两者从2D向3D的转换基本是同一时间节点，但两者的实现方式却截然不同。简而言之，PlayStation通过单独定制的特殊芯片来处理3D模型，而《德军总部：3D》是通过一种特殊的算法来表现画面，欺骗人类的大脑，从而营造出3D的感觉。</p>
+<p>​<img src="/images/console/ps1Ridge_Racer.jpg" alt="ps1Ridge Racer"></p>
+<p><img src="/images/console/wolfenstein_3d.jpg" alt="wolfenstein 3d"></p>
+<p>这种情况一直持续到了微软与Nvidia之间命运的合作。在Xbox研发过程中，微软希望打造一款全能的游戏主机，可以玩游戏，上网，运行的是Windows操作系统，甚至能通过互联网进行联机游戏。而且微软为了追求极致的画面效果，没有和传统的主机厂商一样，完全自行研发Xbox硬件平台，而是找到了当时已经开始崭露头角，显现出王霸之气的Nvidia。</p>
+<p>Nvidia是一家华人创立的科技公司，在公司设立之初就以高性能的图形加速卡为主打产品。PC发展早期，所有的图像输出都是由CPU来直接控制的。CPU直接在内存里写入数据，然后显示器再根据内存里的数据进行显示。图形加速卡就是为了加速这一过程而诞生的产物，至于现代意义上的显卡，那时候还没有出现。</p>
+<p>​				</p>
+<p><img src="/images/console/voodoo_1.jpg" alt="voodoo 1"></p>
+<p>在1999年，Nvidia发布了全球第一款图形处理芯片——Geforce 256，正式确立了“GPU”这一相对于CPU的名称，也将图形加速卡从CPU的附庸地位，提升到了与CPU并驾齐驱的程度。关于这块GPU的性能，在当时就是开天辟地的存在。希望给游戏机市场一个惊喜的微软自然而然地盯上了这个新玩意儿。双方一拍即合，Nvidia希望抱上微软的大腿，在Windows平台大显身手，而微软需要足够强劲的机能，创造出足够惊艳的游戏体验来吸引已经玩了很多年日本游戏机的玩家们来购买他们的新主机。</p>
+<p><img src="/images/console/GeForce_256.jpg" alt="GeForce 256"></p>
+<p>这一合作的结晶，就是Xbox。由此游戏主机厂商和GPU厂商在历史的机缘巧合下，正式的走到了一起，而这将给游戏业界带来翻天覆地的变化。</p>
+<p>​				</p>
+<p><img src="/images/console/xbox.jpg" alt="xbox"></p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>我们来回想一下Xbox的主要特点：</p>
+<ul>
+<li>大，手柄大，机器大</li>
+<li>性能强劲</li>
+</ul>
+<p>Sony的PlayStation 2首发价格为299美金，而性能差不多是它两倍的Xbox的首发价格，没错，也是299美金。微软以亏本的价格发售Xbox，不仅研发投入耗费巨资，而且整机的硬件成本也高居不下,一时间造成了卖的越多亏的也越多的局面。联想到几年后Sony和微软的立场对调过来，也是令人感叹。</p>
+<p>Xbox的发售对游戏业界的影响并不仅仅是多了一个巨大体量的竞争者，还在于它对整个游戏开发生态带来全新的事物，那就是Windows和它的DirectX。</p>
+<p>​<img src="/images/console/DirectX.jpg" alt="DirectX"></p>
+<p><img src="/images/console/windows_xp.jpg" alt="windows xp"></p>
+<p>Windows大家都知道是什么，那这个DirectX又是什么东西呢？这里我尽最大努力讲的简单明了一点。</p>
+<p>电脑（游戏主机）的硬件，都是一堆集成电路拼在一起，放在一块板子上，这是物理性的基础。而为了使这些零部件运行起来，我们需要给它通电，提供电源，还需要对它们发出<em>指令</em>，按照我们的意愿来工作，不然它们就只是一堆金属和硅。在这个过程中，这些<em>指令</em>就是开发者所编写的程序（统称）。</p>
+<p>在游戏主机中，游戏开发者是可以直接下达指令来命令游戏主机的硬件如何工作。这样做的好处是效率大大提升，但问题在于游戏中所表现的一切都要开发者手把手来实现，工作量巨大。那么有没有可能，把游戏所需要的常用指令统合起来，做成一个合集，让开发者减少重复性的劳动，来专心开发新的内容，实现自己的想法呢？</p>
+<p>DirectX就是微软为Windows量身打造的一套API（合集），让Windows平台的游戏软件可以高效率的调用硬件资源，让显卡发挥出更高的效率。</p>
+<p>我们来说说Nvidia，和Xbox的销售状况不同，Nvidia的GeForce系列显卡销量是节节攀升，市场占有率进一步扩大，不仅将自己的竞争对手消灭到只有一家，而且在产品的研发与更新上处于绝对领先的位置。先进的技术保障了产品的性能优势，而性能优势更能让消费者买单，而且Nvidia的产品策略极其出色，针对不同的市场定位推出了非常有竞争力的产品，整个Nvidia的形式不是小好，而是一片大好。</p>
+<p>Nvidia不仅为Xbox提供了单独定制的GPU芯片，还积极优化自家显卡产品线与微软DirectX的兼容性，进一步巩固了自己在Windows平台游戏性能的领先地位，由此Nvidia成了Windows平台在游戏领域推广的标志。越来越多的游戏厂商为了给Windows平台开发游戏 ，不仅要适配Windows的DirectX，还要适配Nvidia的产品。在21世纪初期，软硬件的兼容性可是不得不考虑的大问题，就算是技术参数相近的显卡，因为某款驱动的不同，一款游戏的帧数可能出现几十帧的差距。</p>
+<p>​<img src="/images/console/nvidia_its_ment.png" alt="nvidia its ment"></p>
+<p>DirectX，这一微软为了PC的Windows打造的产品，通过Xbox的发售（Xbox运行定制版的Windows操作系统，所以也支持DirectX，当年Xbox的代号就叫DirecXbox），慢慢的渗透到了主机游戏的开发世界（Xbox系）里。</p>
+<p>微软和Nvidia可谓是天作之合，但事情远远没有表面上的那么简单，虽然Nvidia赚的是盆满钵满，但别忘了Xbox可是卖一台亏一台。纵然微软已经实质性的垄断了PC操作系统，但它也是一家商业公司，不可能对一个一直亏损的项目无限的投入。</p>
+<p>于是微软和Nvidia摩擦就此发生了。</p>
+<p>2000年4月，微软预付了2亿美元作为Nvidia为Xbox单独定制GPU芯片的费用，在Xbox发售后，销售状况不如人意。于是2002年，微软询问Nvidia是否可以降价，毕竟半导体行业的成本会因为技术的进步随着时间而下降。然而Nvidia一口回绝，在这一过程中，双方闹得十分不愉快，一度对簿公堂，但是由于种种原因，两家最终于2003年的2月私下和解。</p>
+<p>此时的Nvidia虽然回绝了微软的降价要求，但是它还是没有和微软撕破脸皮，而是选择了继续合作。微软毕竟是业界巨无霸，Nvidia不敢也没有必要得罪微软。微软也还需要Nvidia继续在Windows平台上继续开疆扩土，但是自家的Xbox上，是不会再用Nvidia的芯片了。</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>在电脑DIY的领域中，有一个需要考虑的因素就是整机的散热能力。在同等技术条件下，一块芯片的性能越高，发出的热量就会越大。而如何快速有效地排出电子元器件所产生的热量，对一个封闭的系统来说尤为重要，这一点Xbox 360的初期型显然是做的不够好得。2005年11月发布的Xbox 360为新一代主机竞赛拉开了序幕，作为最早发布的次世代主机，比PlayStation 3提前发售了11个月又20天，微软为了避免在Xbox时代一直被PlayStation 2打压的情况再次出现，这次选择了先下手为强，但微软再一次翻了车。</p>
+<p>虽然Xbox作为一台主机并不是特别的成功，但微软的战略目的还是达到了一部分，成功地在主机市场中获得了一定的份额，站稳了脚跟。微软继续沿用Xbox的研发经验，但这一次的合作商从Nvidia变成了它的死对头，也是唯一的主要竞争者——ATi。</p>
+<p>​                                                            </p>
+<p><img src="/images/console/ATi.png" alt="ATi"></p>
+<p>ATi由4名香港人和1名荷兰人与1985年组建（没错，还是有华人血统，红绿大厂都是华人创立的），公司最初以帮IBM等大型电脑制造商生产显示芯片为主业，1987年正式成为显卡（图形加速卡）零售商。当Nvidia凭借GPU横扫整个显卡市场，将众多竞争对手淘汰出局之时，ATi挺了下来，成为了当时主流市场上唯一能与Nvidia相抗衡的公司。</p>
+<p>微软在结束了与Nvidia在主机显示芯片的合作后，找到了它的竞争对手ATi，加上IBM的Xenon系列CPU，整个Xbox 360的硬件基础已经搭好。强大的硬件，配合上微软自身的Windows软件平台，让微软再一次重拾了抢占客厅娱乐中心的雄心壮志。随着互联网在全球的普及，微软已经做好了充足的准备，在次世代主机大战中打一场漂亮的翻身仗。</p>
+<p>然而微软在主机市场上，就是状况频出。</p>
+<p><img src="/images/console/RED_RING_OF_DEATH_by_juutin.jpg" alt="RED_RING_OF_DEATH_by_juutin"></p>
+<p>提起Xbox 360，三红是绝对无法绕开的关键词。当年三红发生的概率推测为68%，可实际上基本所有的初代Xbox 360都三红了，除了那些堆在仓库还没有开过机的产品以外。微软从来没有正式公布过三红发生的原因，只是用自己雄厚的资金一台一台地收了回来，给玩家更换新的主机。有许多第三方发表过自己的调查意见，其中主要的说法为：</p>
+<blockquote>
+<p>此问题出现全系列Xbox 360游戏主机中。当主机运行时，主机内部图形处理器发出大量热量， 而散热风扇的速度已经无法把全部热空气抽离，导致主板暴露在高温膨胀变形，一旦主板发生变形，CPU处理器和GPU图形处理器与主板的焊接处脱离，引起主机工作异常，从而导致三红灯警告的出现。</p>
+</blockquote>
+<p>概括起来就是显示芯片发出的热量实在太大了，那么这块来自于Nvidia竞争对手的GPU到底是为何如此“火辣”呢？</p>
+<p>芯片制造领域有一个非常重要的参数，就是制程。CPU和GPU芯片的制程在21世纪之前的单位是微米(μm)，与公制单位的换算比例如下</p>
+<ul>
+<li>1 000 000微米 （μm）&#x3D; 1 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B1%B3_(%E5%8D%95%E4%BD%8D)">米</a>（m）</li>
+</ul>
+<p>到了新世纪之后，人类最顶尖的制造工艺终于从微米迈入了纳米的级别，在Xbox 360初期型号上，CPU与GPU的制程都为90nm。我简单说一下为什么这个制程对处理芯片如此重要。</p>
+<p>芯片的运算能力大体上由它包含的半导体元器件数量所决定，那么在一定的尺寸下所能容纳的元器件数量越多，它的性能就越强。但是芯片是不可能无限制堆叠元器件数量的，因为这些元器件在工作的过程中会产生热量。而制程就决定了半导体元器件的最小尺寸。如果在制程相对落后的情况下，要提供同样的性能，因为元器件尺寸太大，那么芯片的尺寸会更大，产生的热量更多。如果制程先进，元器件体积变小，甚至能用更小的体积带来更好的性能以及更低的发热量。</p>
+<p><img src="/images/console/transistor.jpg" alt="transistor"></p>
+<p>90nm的制程在当时来说并不落后，算是主流水平。Nvidia研发实力和技术积累都比ATi来的要强，加上在市场上占主导地位，也有更多的人力物力来进行研发，但ATi的显卡产品在性能上和Nvidia并没有很大的区别，这是为什么呢？因为ATi显卡的核心温度在不同情况下能比Nvidia的高出10℃！这对于PC来说，还可以通过调整散热布局，加装散热风扇来进行改善，加上电脑的机箱尺寸比Xbox 360大的多，所以核心温度高一些并没有太大的问题。</p>
+<p>但是对于开箱即用，工作环境一般在电视柜等通风不顺畅的地方，这几度的区别可能就是三红不三红的关键了。为什么微软在Xbox 360搭载了强力芯片的同时，没有设计散热冗余是一个未解之谜，但这次的事件让微软背负了巨大的压力。玩家纷纷咒骂微软，退换手中的主机。如果当初微软选择继续和Nvidia合作，三红还会不会发生也犹未可知啊。</p>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>我们将视角从北美转到日本，2006年11月11日，Sony挟裹着PlayStation 2时代的王者之气发布了它们的最新一代主机，想要趁胜追击，一口气将任天堂与微软彻底踩在脚下。</p>
+<p>PlayStation 3的硬件设计十分激进，不仅与IBM（还有东芝）合作开发了Cell系列CPU，还和Nvidia牵手，定制了RSX图形处理芯片，力图打造次世代最强的机能，而他们也做到了，但是付出了惨重的代价。</p>
+<p>为了保险，Sony希望借助庞大的PlayStation 2现有的游戏库，为新主机添加了向下兼容功能。做法也十分简单粗暴，直接单独添加一块处理芯片来进行硬件运算，加上性能强大的CPU与GPU，这让首发版的PlayStation 3主板上的布局是这样的：</p>
+<p>​<img src="/images/console/xbox_360MB.jpg" alt="xbox 360MB"></p>
+<p><img src="/images/console/PS3_MB.jpg" alt="PS3 MB"></p>
+<p>这样设计的后果便是，整台主机的满载功耗直接飙升到了惊人的380W，Xbox 360的功耗仅为200W左右。这还不是全部，虽然PlayStation 3的机身空间比Xbox 360的厚，但是这并没有带来什么不同，和三红一样的黄灯噩梦出现了。在性能上来说，PlayStation 3上搭载的Nvidia为Sony定制的RSX芯片是要强于Xbox 360上那块ATi芯片的，这也让顽皮狗的《The Last of Us》让人无比惊艳。</p>
+<p>Sony也不是彻底迷失在了PlayStation 2的胜利中，它分析并研究了竞争对手的产品，从中学习了它们的优点，比如DirectX。</p>
+<p>DirectX是微软给Windows打造的，按主机圈的说法，这叫独占，跨平台是不存在的。但市场上并不是只有微软这一家公司在做图形API，Sony这次找到的就是DirectX的竞争对手——OpenGL。</p>
+<p>​				</p>
+<p><img src="/images/console/OpenGL.png" alt="OpenGL"></p>
+<p>OpenGL正如其名，是开放的，开源的，不如微软那样，只要符合它们的要求和授权，所有人都可以免费使用，甚至是基于它自己做一套相似的东西。而Sony就为PlayStation 3定制了一套PSGL，方便游戏开发者为新的主机更好更快地开发更多的游戏，就如同微软的DirectX在Windows以及Xbox上那样。</p>
+<p>但是并没有什么用，问题不在PSGL上，因为它是针对显卡GPU的，问题在Cell上。</p>
+<p>模拟地球是很多玩家们调侃PlayStation 3的一句常见台词，指的是当年Sony在宣传的时候打出了新主机能够模拟地球的称号，事实上Cell处理器的性能着实不错，有很多大学、实验室甚至军方都采购了很多的PS3来当作高性能计算机的计算节点。但是好刀也得会用才能上阵杀敌，不然很容易伤到自己。Cell处理器诡异的设计，加上和RSX显示芯片的调度让游戏开发者无比头疼，除了少数几家Sony旗下的工作室的游戏能充分发挥Cell处理器以及RSX的性能外，大部分跨平台游戏的表现都一定程度上比不上Xbox 360版。</p>
+<p>虽然Nvidia在这次合作中表现的中规中矩，但这时候的Nvidia已经在PC游戏领域处于压倒性的优势地位中了，高端市场被它牢牢把握，已经成为了事实的GPU市场的领头羊，而主机市场这点利润和繁琐让它有点不胜其烦，特别是随着时间的推进不仅不能涨价，还要不断的调低供货价格，让它更加兴趣索然，这让Nvidia直接离开了主机市场，专攻PC与专业级市场。</p>
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><p>Advanced Micro Devices，俗称AMD，是群众眼中伟大的翻身大师，不屈的勇者，Intel斗士。</p>
+<p>​<img src="/images/console/AMD.jpg" alt="AMD"></p>
+<p>本来主机市场和它没有任何关系，一直在CPU市场和Intel拼刺刀，但是直到2006年这个神奇的时间点，与另外一个同样被打压的生活不能自理的ATi碰上了头，AMD收购了ATi，这才掀开了全新的篇章。</p>
+<p>2006年Intel Core系列CPU发布，正式从前面的低谷中走出，而AMD在Intel的新攻势下节节败退，唯有DIY市场上凭借着自身产品的性价比保有了一隅之地。高端市场全面失守让AMD的利润大幅下降，在这时它看到了同样悲惨的ATi，于是两家在经过了协商后，宣布合并。</p>
+<p>一个做CPU的和一个做GPU的合并，那么是不是可以把CPU与GPU拼在一起，让用户买一块芯片就能同时拥有两块的功能？这个思路的产物就是——Accelerated Processing Unit（APU），本质上来说，CPU还是CPU，GPU还是GPU，两者还是泾渭分明的关系，只是通过技术手段把两块芯片封装在了同一个容器里，让用户买一块APU就可以直接获得CPU+GPU的功能。</p>
+<p>​                                                   </p>
+<p><img src="/images/console/APU.jpg" alt="APU"></p>
+<p>这对于降低用户的使用成本有着立竿见影的效果，但是虽然价格便宜了，对性能没有任何加成。这两家之所以被压的抬不起头还是因为产品的绝对性能和Intel与Nvidia拉开了差距，不得不采取这样的产品策略。</p>
+<p>在微软和Sony各自经历了痛苦的初期之后，这时又杀出来一个黑马——Wii。</p>
+<p>2006年11月19日，也就是Sony发布PlayStation 3的8天后，任天堂公布了最新一代主机Wii，不同于它们上一台主机Game Cube主打的高性能路线，这一代主机基本放弃了和另外两家比拼机能的想法，主打娱乐轻松的家庭共乐路线。</p>
+<p>Wii的首发售价为249美金，同期的Xbox 360首发售价为299美金，而PS3则为惊人的499美金。核心玩家普遍不看好Wii，因为它是逆潮流的，性能孱弱，和3A游戏绝缘等因素。但是随后的销售情况让所有人都大吃一惊，Wii的销量一骑绝尘，任天堂的盈利节节攀升，甚至将任天堂送上了日本市值前十的地位。</p>
+<p>于是乎在研发下一代主机的时候，微软与Sony不约而同的采取了同样的策略，那就是压缩成本。</p>
+<p>2007 - 2010年的次贷危机让在全球范围内掀起了巨大的浪潮，人们迫于生计，纷纷削减了非必要的开支，失业人数也节节攀高。本来就处于落后的AMD日子也越发难过，笔记本市场可以说是退出了竞争，而显卡业务也处于半死不活的状态。就在这时，AMD的转机出现了。</p>
+<p>由于Sony和微软都经历过亏本卖主机的时期，导致了它们不得不放弃以往的做法，转而追求硬件上的盈利（或者说少亏点）。本世代已经过半，双方都在着手筹备研发下一代主机，微软和Sony都学习到了足够多的经验，也有了足够的认识来避免踩更多的坑。虽然双方对于下一代主机的发展思路有分歧，比如微软准备继续发扬Kinect体感技术的优势，强化体感操作所占的比重，而Sony则彻底贯彻1080P才是一切的思路，砍掉所有多余的功能与噱头，专注于游戏本身。</p>
+<p>微软在进行新一代主机设计的时候，思路非常明确，那就是绝对不能再出现三红这样的故障。这一思路的结果就是Xbox One初期型号那犹如PC主机大小的外形，而且拆开来看，Xbox One也和PC十分相似。宽大的机体保证了足够的空间来放置必要的散热系统，并且足够大内部空间不会让热量快速堆积在某个小地方，从根本上避免了三红出现的可能。</p>
+<p>​                           </p>
+<p><img src="/images/console/Xbox-One-360-stack.png" alt="Xbox-One-360-stack"></p>
+<p>Sony也对自己的设计思路做了大刀阔斧的改进，Cell处理芯片果断抛弃，RSX图形处理芯片也一并放弃，将原本隔离的两个芯片通过特殊设计的机制结合起来，让CPU与GPU更好的互联互通，降低了第三方的游戏开发难度与成本。不仅如此，Sony对新一代主机所需要搭载的功能做了最大程度的简化，并且将操作系统所占用的内存最大可能的压缩，让游戏程序可以占用尽可能多的资源。</p>
+<p>而微软和Sony能实现上述改进的基础，就是AMD的拳头产品——APU。</p>
+<p>APU所搭载的CPU与GPU的就性能来讲，与同时期的竞争对手的产品相比，都处于中端产品的水平，但是二者合在一起所体现出来的价格优势，那就比分开采购大多了。加上AMD在此时已经潜心研发APU多年，对CPU与GPU的协同工作有了很多心得。AMD甚至可以让APU内置的GPU与另外一块独立的显卡进行联动，可见其技术积累在这方面十分深厚。加上游戏主机的芯片订单数量都是千万级别起，微软和Sony能谈下来的出厂价格肯定会进一步压低，这对双方来说都是十分利好的消息。</p>
+<p>一方面Sony被金融危机所累，平板电视与其他家电业务也一直在下滑，PlayStation 3后期虽然销量不错，但前期巨大的投入与亏损让游戏业务的报表十分难看，所以降低下一代主机的成本成了当务之急。微软的Xbox业务也同样不妙，三红事件的影响实在太过深远，让整个公司内部对Xbox业务的存在意义产生了质疑，而且抢占家庭娱乐中心这一Xbox业务的战略目标达成情况不容乐观，虽然在北美市场Xbox 360销量非常不错，但是只有游戏这一个“功能”还过得去，微软想要通过Xbox来成为整个家庭的互联网中心的计划并不顺利。</p>
+<p>AMD则亟需一个稳定持续的利润点来支撑越来越捉襟见肘的研发投入，因为产品的性能始终无法赶上竞争对手，导致AMD只能在中低端市场进行搏杀，而中低端市场的利润率又无法让AMD加码投入到研发当中，这样就陷入了一个恶性循环，而微软和Sony送上的大订单就是AMD翻身的关键（到2017年终于见到了回报）。一代主机少说6到7年，多则10年的销售周期让AMD在一定时间内可以安心进行新技术与产品的开发，而主机的销量也可以让AMD压低芯片的出厂价格，以薄利多销的形式来为这两家供货。</p>
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><p>那么我们的Nvidia此时在干什么呢？</p>
+<p>Nvidia在为Sony定制了PlayStation 3的RSX芯片之后，公司内部觉得主机业务研发流程繁琐，因为都是深度定制，要根据主机厂商的软硬件组合进行开发，而且更重要的是利润率不高，一台主机的售价里能分给元器件的部分本来就不多，而Nvidia自己显卡零售业务那可都是实打实进到了自己口袋。而且在ATi与AMD合并之后，Nvidia在中高端市场处于垄断地位，高利润率让Nvidia对又麻烦，钱又少的主机业务失去了兴趣。于是乎次世代的主机里面没有Nvidia的身影，而AMD独占了这一块。</p>
+<p>但这并不代表着Nvidia没有自己的野心，那就是CPU。</p>
+<p>老黄（黄仁勋，Nvidia创始人兼CEO）是一个非常有野心的人，他不甘心自己的GPU一直得听Intel&#x2F;AMD的CPU指挥，于是他决定自己做CPU。当然，Nvidia那时候的体量当然不足以和Intel相抗衡，于是他没有直接杀入x86桌面CPU市场，而是转而将目光投向了欣欣向荣的移动市场，在ARM架构的基础上，融入了自己独步天下的GPU技术，打造出了自己的移动SoC产品线——Tegra，可能有细心的读者已经认出来了，这就是任天堂最新主机Nintendo Switch上搭载的芯片组。</p>
+<p>​				</p>
+<p><img src="/images/console/Tegra.jpg" alt="Tegra"></p>
+<p>高通的Snapdragon也好，Nvidia的Tegra也好，以及苹果的A系列也好，相对于Intel以及AMD的芯片产品本质上没有多少区别(无非是指令集与处理效率的不同），不过因为所面向的市场不同，所以x86桌面端与ARM移动端并没有多少直接的竞争关系。Nvidia的Tegra的产品主打特色为GeForce加成的图形处理能力，当年搭载Tegra芯片的手机可以运行一些Nvidia特别移植过来的PC游戏，在那个抽卡手游还没横扫市场的年代还是令人十分惊艳的。而且Nvidia还基于Tegra推出了自己的掌机产品线——Nvidia Shield。不仅可以运行高画质的手机游戏，还能和自家是GeForce显卡进行联动，将电脑上的3A大作通过无线视频传输到掌机上进行游戏，基本就是PlayStation 4和PSV联动的最初版本。</p>
+<p>​				</p>
+<p><img src="/images/console/Shield.jpg" alt="Shield"></p>
+<p>就像前面提到的，强大的性能带来了相对来说更多的热量，而Tegra将这领先时代的图形性能与发热量带到了体积更为狭小，散热条件更恶劣的手机&#x2F;平板电脑上。那一时期搭载Tegra的产品无一例外不是电老虎与暖手宝的合体，虽然有更强的游戏性能，但是掉电速度和发热量已经到了令人无法忍受的地步，Tegra在移动市场也只是昙花一现，后期就只有Nvidia Shield系列还在继续使用Tegra芯片组了。</p>
+<p>虽然性能优越，但是功耗与发热量巨大，而且还必须单独为其进行优化与适配（是不是想到了Sony的某一款产品？），市场上变得无人问津，不过Nvidia并没有放弃Tegra，而是将它的定位从移动市场变换到了另一个移动市场，力图将其打造成为汽车娱乐系统的神经中枢。一直到2017年任天堂发售的Nintendo Switch才将Nvidia带回了主机市场这一阔别已久的领域。</p>
+<p>相信大家对NS上的画面表现都印象深刻，Tegra性能优势一如既往，我在看过马里奥赛车8的表现之后确实佩服Nvidia在图形技术领域的积累，分屏之后还能保持帧率稳定，实在是令人惊叹。Nvidia在Tegra的尝试失败之后并没有止步不前，凭借着AI以及机器学习的大热，以及比特币等数字货币的兴起，显卡业务越来越好，而且Nvidia一直在布局未来，Nvidia对自动驾驶领域的研究与投入也越来越大，并且依托自身在GPU领域的技术实力，推出了一系列的自动驾驶解决方案，极有可能在未来抢得先机。</p>
+<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><p>终于要到结尾了，这篇文章写的十分随意，只有一个很粗略的时间线索，我也只是凭着我的记忆以及维基百科里面的内容拼凑出上面这么多文字，如果能看到这儿我想说一声辛苦了。</p>
+<p>商业公司之间的行为也是会互相影响的，尤其是游戏界上下游关系如此明确的情况。上面这几家公司互相合作与翻脸，加上外界因素的作用，让各自的发展轨迹都有了很大的不同。</p>
+<p>如果微软继续和Nvidia合作，那么三红事件有没有可能不会发生？而不发生三红事件的话，Xbox 360应该很有可能让微软彻底压制Sony吧。</p>
+<p>而如果不是金融危机，那么AMD能不能拿到Sony和微软的主机订单，扛到2017年咸鱼翻身也是一个未知数。</p>
+<p>DirectX的加入让主机游戏开发者有机会接触到PC游戏的开发流程，而微软与Sony的主机硬件基础实质上的统一而让跨平台与开发流程缩短了很多。但是由于3A游戏的过于强势让中小厂商无力竞争，导致市场分化越来越严重，游戏的画面不断进步让游戏开发流程又变得复杂而昂贵。</p>
+<p>主机PC化已经是事实，两者的分界线已经只存于软件层面，而AMD的翻身会不会让Intel也加入到主机战场中，Nvidia还会不会与微软或者Sony重拾合作关系，一切都只能交给时间来回答。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/console/" rel="tag"># console</a>
+              <a href="/tags/amd/" rel="tag"># amd</a>
+              <a href="/tags/nvidia/" rel="tag"># nvidia</a>
+              <a href="/tags/microsoft/" rel="tag"># microsoft</a>
+              <a href="/tags/gpu/" rel="tag"># gpu</a>
+              <a href="/tags/cpu/" rel="tag"># cpu</a>
+              <a href="/tags/sony/" rel="tag"># sony</a>
+              <a href="/tags/nintendo/" rel="tag"># nintendo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/nas/%E4%BD%8E%E6%88%90%E6%9C%ACNAS%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.0/" rel="next" title="低成本NAS解决方案1.0">
+      低成本NAS解决方案1.0 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="奔街命"
+      src="/uploads/dora.jpg">
+  <p class="site-author-name" itemprop="name">奔街命</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">奔街命</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
