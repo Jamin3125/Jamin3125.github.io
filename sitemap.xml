@@ -65,34 +65,6 @@
 
   
   <url>
-    <loc>https://slownas.tk/tags/tutorial/</loc>
-    <lastmod>2024-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/tags/gcores/</loc>
-    <lastmod>2024-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/tags/laptop/</loc>
-    <lastmod>2024-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/tags/cooling/</loc>
-    <lastmod>2024-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://slownas.tk/tags/console/</loc>
     <lastmod>2024-01-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -143,6 +115,34 @@
   
   <url>
     <loc>https://slownas.tk/tags/nintendo/</loc>
+    <lastmod>2024-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/tutorial/</loc>
+    <lastmod>2024-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/gcores/</loc>
+    <lastmod>2024-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/laptop/</loc>
+    <lastmod>2024-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/cooling/</loc>
     <lastmod>2024-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
