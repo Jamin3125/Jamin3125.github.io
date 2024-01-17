@@ -4,7 +4,25 @@
   <url>
     <loc>https://slownas.tk/posts/23143/</loc>
     
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/posts/22694/</loc>
+    
+    <lastmod>2024-01-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/posts/43077/</loc>
+    
+    <lastmod>2024-01-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -14,24 +32,6 @@
     <loc>https://slownas.tk/baidu_verify_codeva-PEqd8QI1fS.html</loc>
     
     <lastmod>2024-01-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/posts/22694/</loc>
-    
-    <lastmod>2024-01-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/posts/43077/</loc>
-    
-    <lastmod>2024-01-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -121,34 +121,6 @@
   </url>
   
   <url>
-    <loc>https://slownas.tk/tags/nas/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/tags/kodi/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/tags/synology/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slownas.tk/tags/docker/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://slownas.tk/tags/tutorial/</loc>
     <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -171,6 +143,34 @@
   
   <url>
     <loc>https://slownas.tk/tags/cooling/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/nas/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/kodi/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/synology/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slownas.tk/tags/docker/</loc>
     <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
