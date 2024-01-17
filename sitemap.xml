@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://slownas.tk/hardware/%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%95%A3%E7%83%AD%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</loc>
+    <loc>https://slownas.tk/posts/23143/</loc>
     
     <lastmod>2024-01-16</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://slownas.tk/nas/%E4%BD%8E%E6%88%90%E6%9C%ACNAS%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.0/</loc>
+    <loc>https://slownas.tk/posts/22694/</loc>
     
     <lastmod>2024-01-13</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://slownas.tk/hardware/%E6%96%B0%E7%BA%AA%E5%85%83%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%9A%97%E7%BA%BF%E6%96%97%E4%BA%89/</loc>
+    <loc>https://slownas.tk/posts/43077/</loc>
     
     <lastmod>2024-01-13</lastmod>
     
@@ -58,7 +58,7 @@
 
   <url>
     <loc>https://slownas.tk/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,112 +66,112 @@
   
   <url>
     <loc>https://slownas.tk/tags/console/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/amd/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/nvidia/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/microsoft/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/gpu/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/cpu/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/sony/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/nintendo/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/nas/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/kodi/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/synology/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/docker/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/tutorial/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/gcores/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/laptop/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/tags/cooling/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -180,14 +180,14 @@
   
   <url>
     <loc>https://slownas.tk/categories/hardware/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://slownas.tk/categories/nas/</loc>
-    <lastmod>2024-01-16</lastmod>
+    <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
